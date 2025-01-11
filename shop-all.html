@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/2WJy3QD.png">
+    <!-- Favicon pour les navigateurs modernes -->
+    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" sizes="16x16" />
+    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" sizes="32x32" />
+    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" sizes="48x48" />
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel-content">
+          <div class="carousel-item">New items now available! 🆕</div>
+          <div class="carousel-item">Stay in the know! Subscribe to the Burban Loyalty Program</div>
+          <div class="carousel-item">Worldwide shipping 🌍</div>
+          <div class="carousel-item">Free delivery 📦</div>
+          <div class="carousel-item">Christmas Sale 🎄- Special Offer - Up to 10% off your first order</div>
+          <div class="carousel-item">Welcome!</div>
+          <div class="carousel-item hide-small">Burban is committed to environmental protection! (Visit our page dedicated to this cause) 🌍</div>
+        </div>
+        <button class="carousel-arrow arrow-left" onclick="prevSlide()" id="prevBtn">&#10094;</button>
+        <button class="carousel-arrow arrow-right" onclick="nextSlide()" id="nextBtn">&#10095;</button>
+    </div>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://i.imgur.com/1KGcrXV.png" alt="Company Logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="submenu">
+                    <a href="shop.html">Shop</a>
+                    <ul class="dropdown">
+                        <li><a href="shop-all.html">All</a></li>
+                        <li><a href="shop-hoodies.html">Hoodies</a></li>
+                        <li><a href="shop-tshirts.html">T-Shirts & Polo</a></li>
+                        <li><a href="shop-caps.html">Caps & Beanies</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="burban-is-committed.html">Burban is committed</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a class="sign-up" href="signup.html">Sign Up</a>
+        </div>
+        <!-- Menu Burger -->
+    <div class="burger-menu">
+        <div class="burger-icon" onclick="toggleBurgerMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="burger-dropdown">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop-all.html">Shop</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    </header>
+
+    <!------------------------------------------------------------------------------------------ Boutique ------------------------------------------------------------------------------------------>
+    <object data="all.html" type="text/html" style="width: 100%; height: 160vh; border: none;"></object>
+    
+    <!------------------------------------------------------------------------------------------ Pied de page ------------------------------------------------------------------------------------------>
+    <!-- Section Bannière -->
+    <div class="space-between"></div>
+
+    <footer style="background-color: #000; color: #fff; padding: 40px 20px; text-align: center; font-family: 'Satoshi', sans-serif;">
+        <div style="margin-bottom: 20px;">
+            <a href="https://facebook.com" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
+                <i class="fab fa-whatsapp"></i>
+            </a><br><br>
+            <!-- Le conteneur du sélecteur de langue -->
+            <div id="google_translate_element"></div>
+        </div>
+        <div style="font-size: 14px; margin-bottom: 10px;">
+            <a href="terms.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Conditions d'utilisation</a> |
+            <a href="privacy.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Politique de confidentialité</a> |
+            <a href="contact.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a>
+        </div>
+        <div style="font-size: 14px;">
+            &copy; 2024 - <span id="year"></span> Burban. All Rights Reserved.
+        </div>
+    </footer>
+    <script>
+        // Mise à jour automatique de l'année
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script>
+        const carouselContent = document.querySelector('.carousel-content');
+        const items = document.querySelectorAll('.carousel-item');
+        let index = 0;
+        let isTransitioning = false;
+
+        const firstItem = items[0].cloneNode(true);
+        carouselContent.appendChild(firstItem);
+
+        function nextSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            index++;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            index--;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            carouselContent.style.transition = 'transform 1s linear';
+            carouselContent.style.transform = `translateX(-${index * 100}%)`;
+
+            carouselContent.addEventListener('transitionend', () => {
+                if (index === items.length) {
+                    carouselContent.style.transition = 'none';
+                    index = 0;
+                    carouselContent.style.transform = `translateX(0)`;
+                } else if (index === -1) {
+                    carouselContent.style.transition = 'none';
+                    index = items.length - 2;
+                    carouselContent.style.transform = `translateX(-${index * 100}%)`;
+                }
+                isTransitioning = false;
+            }, { once: true });
+        }
+
+        let autoScroll = setInterval(nextSlide, 4000);
+
+        document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
+            clearInterval(autoScroll);
+        });
+
+        document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
+            autoScroll = setInterval(nextSlide, 4000);
+        });
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en', // Langue par défaut
+            includedLanguages: 'en,fr,de,es,it', // Langues disponibles
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+          }, 'google_translate_element');
+        }
+      </script>
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+      <script>
+        function toggleBurgerMenu() {
+            const dropdown = document.querySelector('.burger-dropdown');
+            dropdown.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
