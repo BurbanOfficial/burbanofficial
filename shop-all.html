@@ -23,7 +23,7 @@
           <div class="carousel-item">Stay in the know! Subscribe to the Burban Loyalty Program</div>
           <div class="carousel-item">Worldwide shipping 🌍</div>
           <div class="carousel-item">Free delivery 📦</div>
-          <div class="carousel-item">Christmas Sale 🎄- Special Offer - Up to 10% off your first order</div>
+          <div class="carousel-item">The winter sales of 2025 end in&nbsp;<span id="countdown" class="countdown"></span></div>
           <div class="carousel-item">Welcome!</div>
           <div class="carousel-item hide-small">Burban is committed to environmental protection! (Visit our page dedicated to this cause) 🌍</div>
         </div>
@@ -171,6 +171,33 @@
             const dropdown = document.querySelector('.burger-dropdown');
             dropdown.classList.toggle('active');
         }
+    </script>
+
+    <!-------------------------------------------------- Compte à rebours -------------------------------------------------->
+    <script>
+        // Set the date for the end of the winter sales (e.g., 31st January 2025 at 23:59:59)
+        var saleEndDate = new Date("Feb 04, 2025 23:59:59").getTime();
+
+        // Update the countdown every 1 second
+        var countdown = setInterval(function() {
+            var now = new Date().getTime();
+            var timeRemaining = saleEndDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            // Display the result
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            // If the countdown is over
+            if (timeRemaining < 0) {
+                clearInterval(countdown);
+                document.getElementById("countdown").innerHTML = "The sales have ended!";
+            }
+        }, 1000);
     </script>
 </body>
 </html>
