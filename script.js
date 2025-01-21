@@ -146,58 +146,6 @@ function toggleFilterMenu() {
     }
 }
 
-const carousel = document.querySelector('.carousel-images');
-let isDragging = false;
-let startPos = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-let animationID = 0;
-
-carousel.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    startPos = getPositionX(e);
-    carousel.style.transition = 'none';
-    cancelAnimationFrame(animationID);
-});
-
-carousel.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-    const currentPosition = getPositionX(e);
-    currentTranslate = prevTranslate + currentPosition - startPos;
-    setCarouselPosition();
-});
-
-carousel.addEventListener('touchend', () => {
-    isDragging = false;
-    const movedBy = currentTranslate - prevTranslate;
-
-    // Condition pour changer de slide (50px ou plus)
-    if (movedBy < -50) moveToNextSlide();
-    else if (movedBy > 50) moveToPreviousSlide();
-    else currentTranslate = prevTranslate;
-
-    setCarouselPosition();
-    carousel.style.transition = 'transform 0.3s ease-out';
-});
-
-function getPositionX(e) {
-    return e.touches[0].clientX;
-}
-
-function setCarouselPosition() {
-    carousel.style.transform = `translateX(${currentTranslate}px)`;
-}
-
-function moveToNextSlide() {
-    prevTranslate = currentTranslate - window.innerWidth; // Largeur d'une slide
-    currentTranslate = prevTranslate;
-}
-
-function moveToPreviousSlide() {
-    prevTranslate = currentTranslate + window.innerWidth; // Largeur d'une slide
-    currentTranslate = prevTranslate;
-}
-
     function openSizeGuideProduit1() {
         window.open('https://drive.google.com/file/d/1ASewdOGzIbSo6-WVxrrR6-RKkoqxb4L-/view?usp=sharing', '_blank');
     }
