@@ -145,7 +145,6 @@ body {
     background-color: #ffeb3b;
     padding: 10px;
     text-align: center;
-    margin-top: 20px;
 }
 
 .accordion {
@@ -250,9 +249,12 @@ body {
   }
   
   .carousel-images img {
-    min-width: 100%;
-    height: auto;
-    margin-bottom: 15px;
+    width: 100%;        /* Réduit la taille de l'image pour laisser apparaître le bord blanc */
+    height: auto;      /* Maintient les proportions de l'image */
+    margin-bottom: 30px;
+    border-radius: 18px;
+    margin-left: auto; /* Centrer l'image horizontalement */
+    margin-right: auto; /* Centrer l'image horizontalement */
   }
   
   .carousel-dots {
@@ -265,16 +267,44 @@ body {
   }
   
   .carousel-dots .dot {
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
     background-color: #ddd;
-    border-radius: 27%;
+    border-radius: 100%;
     cursor: pointer;
   }
   
   .carousel-dots .dot.active {
     background-color: #000000;
   }
+
+.payment-carousel {
+    position: relative;
+    overflow: hidden;  /* Cache le débordement pour ne montrer que la partie visible */
+    width: 100%;       /* Largeur totale */
+    height: 80px;      /* Ajuste la hauteur selon le besoin */
+    margin-top: 30px;
+}
+
+.payment-list {
+    display: flex;
+    animation: scroll-payment 30s linear infinite;  /* Défilement continu */
+}
+
+.payment-list img {
+    margin-right: 20px;  /* Espacement entre les logos */
+    height: 40px;        /* Taille des logos */
+    width: auto;         /* Conserver les proportions des images */
+}
+
+@keyframes scroll-payment {
+    0% {
+        transform: translateX(100%); /* Commence du côté droit */
+    }
+    100% {
+        transform: translateX(-195%); /* Va jusqu'au côté gauche */
+    }
+}
 
 /* Boutique en ligne (CSS ancienne version) */
 @keyframes gradient {
