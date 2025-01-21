@@ -31,15 +31,30 @@ body {
     display: block;
     justify-content: center; /* Centre horizontalement */
     align-items: center; /* Centre verticalement */
-    position: fixed; /* Permet de positionner l'élément par rapport à l'écran */
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    margin-top: 500px;
-    overflow-y: auto; /* Afficher la barre de défilement verticale si nécessaire */
+    margin-top: 0;
+    padding: 10px; /* Réduire le padding pour mieux s'adapter */
     }
   }
+
+  @media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Empiler les sections verticalement */
+        align-items: center; /* Centrer le contenu */
+    }
+
+    .left, .right {
+        width: 100%; /* Forcer chaque section à prendre toute la largeur */
+    }
+
+    .carousel {
+        width: 100%; /* Adapter le carrousel à la largeur de l'écran */
+    }
+}
 
 .gallery {
     position: relative;
@@ -212,10 +227,11 @@ body {
 .carousel {
     max-width: 100%;
     display: block;
-    margin-bottom: 30px; /* Espacement sous le carrousel */
+    margin: 0 auto;
     justify-content: center; /* Centre horizontalement */
     align-items: center; /* Centre verticalement */
-    position: fixed; /* Permet de positionner l'élément par rapport à l'écran */
+    position: relative; /* Permet de positionner l'élément par rapport à l'écran */
+    overflow: hidden;
     top: 0;
     left: 0;
   }
@@ -223,6 +239,8 @@ body {
   @media (min-width: 768px) {
     .carousel {
       display: none;
+      margin-bottom: 30px; /* Ajout d'un espace sous le carrousel */
+      width: 100%; /* Forcer le carrousel à prendre toute la largeur */
     }
   }
 
@@ -234,6 +252,7 @@ body {
   .carousel-images img {
     min-width: 100%;
     height: auto;
+    margin-bottom: 15px;
   }
   
   .carousel-dots {
