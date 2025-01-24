@@ -551,6 +551,11 @@
             opacity: 1;
         }
 
+        /* Empêche le défilement de la page sous la modale */
+        body.modal-open {
+            overflow: hidden; /* Désactive le défilement de la page principale */
+        }
+
         @media only screen and (max-width: 767px) {
             /*CSS rules for mobile devices */
         }
@@ -707,7 +712,7 @@
 <!-- Affichage de tous les articles dans la page de découverte des articles dans la boutique -->
 <div class="shop-container">
     <div class="shop-container">
-        <div class="product-card" data-category="t-shirt" data-color="blanc vert violet rose" data-price="33.99" onmouseover="showImage(this, 'https://i.imgur.com/7sIbmpM.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/3EAiQad.jpeg')" onclick="openModal('produit15')">
+        <div class="product-card" data-category="t-shirt" data-color="blanc vert violet rose" data-price="33.99" onmouseover="showImage(this, 'https://i.imgur.com/7sIbmpM.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/3EAiQad.jpeg')" onclick="openProductPage('produit15')">
             <!-- Étiquette respectueuse de l'environnement -->
         <div class="eco-label">
             <span class="eco-icon">🌱</span>
@@ -721,7 +726,7 @@
                 <h3 class="product-title">Morning Sweets</h3>
                 <h6 class="product-categorie">T-Shirt</h6>
                 <p class="product-price">33,99€</p>
-                <button class="view-product-button" onclick="openModal('produit15'); event.stopPropagation();">Discover</button>
+                <button class="view-product-button" onclick="openProductPage('produit15'); event.stopPropagation();">Discover</button>
             </div>
         </div>
 
@@ -971,6 +976,8 @@
     function openModal(productId) {
         const modal = document.getElementById("modal");
         const modalBody = document.getElementById("modal-body");
+        document.querySelector('.modal').style.display = 'block';
+        document.body.classList.add('modal-open');  // Ajoute la classe pour bloquer le défilement de la page
 
     // Sauvegarde de la position actuelle du défilement
     scrollPosition = window.scrollY;
@@ -3553,6 +3560,8 @@
     function closeModal() {
         const modal = document.getElementById("modal");
         modal.style.display = "none";
+        document.querySelector('.modal').style.display = 'none';
+        document.body.classList.remove('modal-open');  // Retire la classe pour permettre à la page de défiler à nouveau
 
     // Revenir à la position de défilement d'origine
     window.scrollTo(0, scrollPosition);
@@ -3719,5 +3728,11 @@ function toggleFilterMenu() {
     }
 </script>
 
+<script>
+function openProductPage() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('Articles/Modèle/index.html', '_blank');
+}
+</script>
 </body>
 </html>

@@ -79,99 +79,100 @@
 
     <!------------------------------------------------------------------------------------------ Boutique ------------------------------------------------------------------------------------------>
     <object data="all.html" type="text/html" style="width: 100%; height: 160vh; border: none;"></object>
-    
-    <!------------------------------------------------------------------------------------------ Pied de page ------------------------------------------------------------------------------------------>
-    <!-- Section Bannière -->
-    <div class="space-between"></div>
+        
+        <!------------------------------------------------------------------------------------------ Pied de page ------------------------------------------------------------------------------------------>
+        <!-- Section Bannière -->
+        <div class="space-between"></div>
 
-    <footer style="background-color: #000; color: #fff; padding: 40px 20px; text-align: center; font-family: 'Satoshi', sans-serif;">
-        <div style="margin-bottom: 20px;">
-            <a href="https://www.facebook.com/profile.php?id=61566473957609" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.tiktok.com/@burban.official" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.instagram.com/burban.official/" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.whatsapp.com/channel/0029VamoSXlDJ6GxgWLAmz17" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
-                <i class="fab fa-whatsapp"></i>
-            </a><br><br>
-            <!-- Le conteneur du sélecteur de langue -->
-            <div id="google_translate_element"></div>
-        </div>
-        <div style="font-size: 14px; margin-bottom: 10px;">
-            <a href="terms.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Conditions d'utilisation</a> |
-            <a href="privacy.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Politique de confidentialité</a> |
-            <a href="contact.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a>
-        </div>
-        <div style="font-size: 14px;">
-            &copy; 2024 - <span id="year"></span> Burban. All Rights Reserved.
-        </div>
-    </footer>
-    <script>
-        // Mise à jour automatique de l'année
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <script>
-        const carouselContent = document.querySelector('.carousel-content');
-        const items = document.querySelectorAll('.carousel-item');
-        let index = 0;
-        let isTransitioning = false;
+        <footer style="background-color: #000; color: #fff; padding: 40px 20px; text-align: center; font-family: 'Satoshi', sans-serif;">
+            <div style="margin-bottom: 20px;">
+                <a href="https://www.facebook.com/profile.php?id=61566473957609" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.tiktok.com/@burban.official" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.instagram.com/burban.official/" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.whatsapp.com/channel/0029VamoSXlDJ6GxgWLAmz17" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
+                    <i class="fab fa-whatsapp"></i>
+                </a><br><br>
+                <!-- Le conteneur du sélecteur de langue -->
+                <div id="google_translate_element"></div>
+            </div>
+            <div style="font-size: 14px; margin-bottom: 10px;">
+                <a href="terms.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Conditions d'utilisation</a> |
+                <a href="privacy.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Politique de confidentialité</a> |
+                <a href="contact.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a>
+            </div>
+            <div style="font-size: 14px;">
+                &copy; 2024 - <span id="year"></span> Burban. All Rights Reserved.
+            </div>
+        </footer>
+        <script>
+            // Mise à jour automatique de l'année
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+        <script>
+            const carouselContent = document.querySelector('.carousel-content');
+            const items = document.querySelectorAll('.carousel-item');
+            let index = 0;
+            let isTransitioning = false;
 
-        const firstItem = items[0].cloneNode(true);
-        carouselContent.appendChild(firstItem);
+            const firstItem = items[0].cloneNode(true);
+            carouselContent.appendChild(firstItem);
 
-        function nextSlide() {
-            if (isTransitioning) return;
-            isTransitioning = true;
-            index++;
-            updateCarousel();
-        }
+            function nextSlide() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                index++;
+                updateCarousel();
+            }
 
-        function prevSlide() {
-            if (isTransitioning) return;
-            isTransitioning = true;
-            index--;
-            updateCarousel();
-        }
+            function prevSlide() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                index--;
+                updateCarousel();
+            }
 
-        function updateCarousel() {
-            carouselContent.style.transition = 'transform 1s linear';
-            carouselContent.style.transform = `translateX(-${index * 100}%)`;
+            function updateCarousel() {
+                carouselContent.style.transition = 'transform 1s linear';
+                carouselContent.style.transform = `translateX(-${index * 100}%)`;
 
-            carouselContent.addEventListener('transitionend', () => {
-                if (index === items.length) {
-                    carouselContent.style.transition = 'none';
-                    index = 0;
-                    carouselContent.style.transform = `translateX(0)`;
-                } else if (index === -1) {
-                    carouselContent.style.transition = 'none';
-                    index = items.length - 2;
-                    carouselContent.style.transform = `translateX(-${index * 100}%)`;
-                }
-                isTransitioning = false;
-            }, { once: true });
-        }
+                carouselContent.addEventListener('transitionend', () => {
+                    if (index === items.length) {
+                        carouselContent.style.transition = 'none';
+                        index = 0;
+                        carouselContent.style.transform = `translateX(0)`;
+                    } else if (index === -1) {
+                        carouselContent.style.transition = 'none';
+                        index = items.length - 2;
+                        carouselContent.style.transform = `translateX(-${index * 100}%)`;
+                    }
+                    isTransitioning = false;
+                }, { once: true });
+            }
 
-        let autoScroll = setInterval(nextSlide, 4000);
+            let autoScroll = setInterval(nextSlide, 4000);
 
-        document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
-            clearInterval(autoScroll);
-        });
+            document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
+                clearInterval(autoScroll);
+            });
 
-        document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
-            autoScroll = setInterval(nextSlide, 4000);
-        });
-    </script>
+            document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
+                autoScroll = setInterval(nextSlide, 4000);
+            });
+        </script>
 
-      <script>
-        function toggleBurgerMenu() {
-            const dropdown = document.querySelector('.burger-dropdown');
-            dropdown.classList.toggle('active');
-        }
-    </script>
+        <script>
+            function toggleBurgerMenu() {
+                const dropdown = document.querySelector('.burger-dropdown');
+                dropdown.classList.toggle('active');
+            }
+        </script>
+    </div>
 
     <!-------------------------------------------------- Compte à rebours -------------------------------------------------->
     <script>

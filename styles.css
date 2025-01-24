@@ -146,17 +146,57 @@ footer {
     }
 
     .burger-menu {
-        display: block; /* Affiche le menu burger */
-        position: relative;
-        z-index: 1100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
     }
 
+    .menu-btn {
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: white;
+      }
+
+    /* Fond noir avec logo */
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-overlay .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: white;
+      }
+
     .burger-icon {
+        font-size: 30px;
         cursor: pointer;
         display: flex;
-        flex-direction: column;
-        gap: 5px;
-        width: 30px;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
     }
 
     .burger-icon span {
@@ -167,26 +207,55 @@ footer {
         transition: all 0.3s;
     }
 
+    /* Icône hamburger */
+    .burger-icon .fa-bars {
+        transition: opacity 0.3s ease;
+        display: inline;
+    }
+
+    /* Icône croix */
+    .burger-icon .fa-xmark {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: inline;
+    }
+
+    /* Lorsque le menu est activé (cliqué), afficher la croix et masquer l'icône du hamburger */
+    .burger-icon.active .fa-bars {
+        opacity: 0;
+        display: inline;
+    }
+
+    .burger-icon.active .fa-xmark {
+        opacity: 1;
+        display: inline;
+    }
+    
     /* Menu déroulant du menu burger */
     .burger-dropdown {
-        display: none;
-        position: absolute;
-        top: 60px;
-        right: 10%;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        width: 200px;
-        text-align: left;
-        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: center;
+        transform: translateY(100%);
+        transition: transform 0.5s ease;
     }
 
     .burger-dropdown.active {
         display: block;
+        bottom: 0%;
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .burger-dropdown li {
-        border-bottom: 1px solid #ddd;
+        margin: 15px 0;
+        list-style: none;
     }
 
     .burger-dropdown li:last-child {
@@ -196,15 +265,26 @@ footer {
     .burger-dropdown a {
         display: block;
         padding: 10px 15px;
-        font-size: 1rem;
-        color: #000;
-        transition: background 0.3s ease;
+        font-size: 1.2rem;
+        color: #000000;
+        border-radius: 17px;
+        transition: background-color 0.3s ease;
     }
 
     .burger-dropdown a:hover {
-        background-color: #f4f4f4;
+        background-color: #0000000a;
     }
+
+    header.hidden {
+        transform: translateY(-100%);
+      }
 }
+
+@media (max-width: 768px) {
+    object {
+      height: 500vh; /* Ajuste la hauteur automatiquement sur les petits écrans */
+    }
+  }
 
 /* ------------------------------------------------ Header déroulant ------------------------------------------------*/
 /* Container principal */
