@@ -483,13 +483,6 @@ footer {
       height: 220vh; /* Augmente la hauteur pour les écrans plus petits */
     }
   }
-  
-/* Adaptation pour téléphones */
-@media (max-width: 480px) {
-    .main-gallery {
-      height: 250vh; /* Ajuste la hauteur pour les téléphones */
-    }
-  }
 
 .gallery-title {
     font-size: 2rem;
