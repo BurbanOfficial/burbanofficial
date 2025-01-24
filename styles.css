@@ -64,7 +64,7 @@ nav {
 }
 
 .menu a:hover {
-    color: #3ea11f;
+    color: #90bed6;
 }
 
 .menu a::after {
@@ -74,7 +74,7 @@ nav {
     bottom: -5px;
     width: 0;
     height: 2px;
-    background: #3ea11f;
+    background: #90bed6;
     transition: width 0.3s ease;
 }
 
@@ -101,6 +101,7 @@ nav {
     display: block;
     padding: 5px 10px;
     white-space: nowrap;
+    margin: 5px;
 }
 
 .dropdown li a:hover {
@@ -197,6 +198,7 @@ footer {
         align-items: center;
         justify-content: center;
         transition: background-color 0.3s ease;
+        position: relative;
     }
 
     .burger-icon span {
@@ -205,6 +207,15 @@ footer {
         background-color: #000;
         border-radius: 2px;
         transition: all 0.3s;
+    }
+
+    .burger-icon i {
+        position: absolute; /* Superpose les icônes */
+        top: 50%; /* Centre verticalement */
+        left: 50%; /* Centre horizontalement */
+        transform: translate(-50%, -50%); /* Ajuste la position au centre */
+        font-size: 30px; /* Taille des icônes */
+        transition: opacity 0.3s ease; /* Transition fluide pour l'apparition/disparition */
     }
 
     /* Icône hamburger */
@@ -218,6 +229,7 @@ footer {
         opacity: 0;
         transition: opacity 0.3s ease;
         display: inline;
+        color: #90bed6;
     }
 
     /* Lorsque le menu est activé (cliqué), afficher la croix et masquer l'icône du hamburger */
@@ -272,7 +284,7 @@ footer {
     }
 
     .burger-dropdown a:hover {
-        background-color: #0000000a;
+        background-color: #d1e7f8;
     }
 
     header.hidden {
@@ -418,14 +430,14 @@ footer {
 .sign-up {
     font-size: 1rem;
     color: #fff;
-    background: #3ea11f;
+    background: #90bed6;
     padding: 10px 20px;
     border-radius: 10px;
     transition: background 0.3s ease;
 }
 
 .sign-up:hover {
-    background: #378a1e;
+    background: #3b6d89;
 }
 
 /* Style du bouton pour changer la langue */
@@ -458,6 +470,26 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
+.main-gallery {
+    width: 100%; /* S'adapte à la largeur de son conteneur */
+    height: 54vh; /* 54% de la hauteur de la fenêtre visible */
+    border: none; /* Supprime les bordures */
+}
+
+/* Adaptation pour tablettes */
+@media (max-width: 768px) {
+    .main-gallery {
+      height: 220vh; /* Augmente la hauteur pour les écrans plus petits */
+    }
+  }
+  
+/* Adaptation pour téléphones */
+@media (max-width: 480px) {
+    .main-gallery {
+      height: 300vh; /* Ajuste la hauteur pour les téléphones */
+    }
+  }
 
 .gallery-title {
     font-size: 2rem;
