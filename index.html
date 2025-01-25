@@ -1,242 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Shop</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <title>Page Produit</title>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=bevellier@700,500,400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Favicon -->
-    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" type="image/png">
-    <link rel="apple-touch-icon" href="https://i.imgur.com/2WJy3QD.png">
-    <!-- Favicon pour les navigateurs modernes -->
-    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" sizes="16x16" />
-    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" sizes="32x32" />
-    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" sizes="48x48" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+    <script src="script.js" defer></script> <!-- Lien vers le fichier JavaScript -->
 </head>
 <body>
 
-    <div class="carousel-container">
-        <div class="carousel-content">
-          <div class="carousel-item">New items now available! 🆕</div>
-          <div class="carousel-item">Stay in the know! Subscribe to the Burban Loyalty Program</div>
-          <div class="carousel-item">Worldwide shipping 🌍</div>
-          <div class="carousel-item">Free delivery 📦</div>
-          <div class="carousel-item">The winter sales of 2025 end in&nbsp;<span id="countdown" class="countdown"></span></div>
-          <div class="carousel-item">Welcome!</div>
-          <div class="carousel-item hide-small">Burban is committed to environmental protection! (Visit our page dedicated to this cause) 🌍</div>
-        </div>
-        <button class="carousel-arrow arrow-left" onclick="prevSlide()" id="prevBtn">&#10094;</button>
-        <button class="carousel-arrow arrow-right" onclick="nextSlide()" id="nextBtn">&#10095;</button>
-    </div>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="https://i.imgur.com/1KGcrXV.png" alt="Company Logo">
-            </a>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li class="submenu">
-                    <a href="shop.html">Shop</a>
-                    <ul class="dropdown">
-                        <li><a href="shop-all.html">All</a></li>
-                        <li><a href="shop-hoodies.html">Hoodies</a></li>
-                        <li><a href="shop-tshirts.html">T-Shirts & Polo</a></li>
-                        <li><a href="shop-caps.html">Caps & Beanies</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="burban-is-committed.html">Burban is committed</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="header-actions">
-            <a class="sign-up" href="signup.html">Sign Up</a>
-        </div>
-         <!-- Menu Burger -->
-         <div class="burger-menu">
-            <div class="burger-icon" onclick="toggleBurgerMenu()">
-                <i class="fa-solid fa-bars"></i> <!-- Icône menu hamburger -->
-                <i class="fa-solid fa-xmark"></i> <!-- Icône croix -->
+<button id="closeButton" onclick="closeWindow()"><i class="fa-solid fa-right-to-bracket"></i></button>
+
+<div class="container">
+    <div class="left">
+        <div class="gallery">
+            <img class="main-photo" src="https://i.imgur.com/TWNLwlA.jpeg" alt="Main Photo">
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="https://i.imgur.com/pMxnN34.jpeg" alt="Photo 1">
+                <img class="thumbnail" src="https://i.imgur.com/nwyumaO.jpeg" alt="Photo 2">
+                <img class="thumbnail" src="https://i.imgur.com/9X9nUTN.jpeg" alt="Photo 3">
             </div>
-            <ul class="burger-dropdown">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop-all.html">Shop</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="thumbnail-container1">
+                <img class="thumbnail" src="https://i.imgur.com/qILNQjt.jpeg" alt="Photo 4">
+                <img class="thumbnail" src="https://i.imgur.com/XLchSuO.jpeg" alt="Photo 5">
+            </div>
         </div>
-    </header>
+    </div>
 
-    <!-- Section Bannière -->
-    <div class="banner1"></div>
-
-    <!-- Section Bannière -->
-    <div class="space-between"></div>
-
-    <!-- Section Bannière -->
-    <div class="banner2"></div>
-
-    <!-- Section Galerie Photo -->
-    <object data="gallery.html" type="text/html" class="main-gallery"></object>
-
-    <!-- Section Bannière -->
-    <div class="space-between"></div>
-    
-    <!-- Pied de page -->
-    <footer style="background-color: #000; color: #fff; padding: 40px 20px; text-align: center; font-family: 'Satoshi', sans-serif;">
-        <div style="margin-bottom: 20px;">
-            <a href="https://www.facebook.com/profile.php?id=61566473957609" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.tiktok.com/@burban.official" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.instagram.com/burban.official/" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.whatsapp.com/channel/0029VamoSXlDJ6GxgWLAmz17" target="_blank" style="color: #fff; margin: 0 10px; text-decoration: none;">
-                <i class="fab fa-whatsapp"></i>
-            </a><br><br>
-            <!-- Le conteneur du sélecteur de langue -->
-            <div id="google_translate_element"></div>
+    <div id="carousel1" class="carousel">
+        <div class="carousel-images">
+          <img src="https://i.imgur.com/TWNLwlA.jpeg" alt="Image 1">
+          <img src="https://i.imgur.com/nwyumaO.jpeg" alt="Image 2">
+          <img src="https://i.imgur.com/9X9nUTN.jpeg" alt="Image 3">
         </div>
-        <div style="font-size: 14px; margin-bottom: 10px;">
-            <a href="terms.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Conditions d'utilisation</a> |
-            <a href="privacy.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Politique de confidentialité</a> |
-            <a href="contact.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a>
+        <div class="carousel-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
         </div>
-        <div style="font-size: 14px;">
-            &copy; 2024 - <span id="year"></span> Burban. All Rights Reserved.
+    </div>
+      
+    <div class="right">
+        <h1><strong>Titre du Produit</strong></h1>
+        <p class="price">€29,99</p>
+        
+        <br><label for="color">Would you like to see another color?</label>
+        <div class="similar-articles">
+            <div class="similar-articles-container">
+                <div class="product-card2" onclick="openModal('produit5 - Marine')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#112537" style="background-color: #112537;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Bordeaux')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#801f24" style="background-color: #801f24;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Anthracite')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#3e383e" style="background-color: #3e383e;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Bleu chiné foncé')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#7a8ca8" style="background-color: #7a8ca8;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Gris chiné')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#cfcbc8" style="background-color: #cfcbc8;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Lavender')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#f7ecff" style="background-color: #f7ecff;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Blanc')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#fff" style="background-color: #fff;"></div>
+                    </div>
+                </div>
+                <!-- Ajoutez d'autres produits similaires ici -->
+            </div>
         </div>
-    </footer>
-    <script>
-        // Mise à jour automatique de l'année
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-    <script>
-        const carouselContent = document.querySelector('.carousel-content');
-        const items = document.querySelectorAll('.carousel-item');
-        let index = 0;
-        let isTransitioning = false;
 
-        const firstItem = items[0].cloneNode(true);
-        carouselContent.appendChild(firstItem);
+        <br><label for="size">Taille</label>
+        <div class="size-selection">
+            <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
+            <div class="size-option" data-link="https://buy.stripe.com/aEUbIO2i0auT7UAg0s" onclick="selectSize(this)">S</div>
+            <div class="size-option" data-link="https://buy.stripe.com/9AQ7sy8Go9qPb6MbKd" onclick="selectSize(this)">M</div>
+            <div class="size-option" data-link="https://buy.stripe.com/6oE4gme0I7iHb6M8y2" onclick="selectSize(this)">L</div>
+            <div class="size-option" data-link="https://buy.stripe.com/4gw9AGbSA6eDeiYbKf" onclick="selectSize(this)">XL</div>
+            <div class="size-option" data-link="https://buy.stripe.com/aEUaEK9KsfPd6Qw8y4" onclick="selectSize(this)">2XL</div>
+            <div class="size-option" data-link="https://buy.stripe.com/6oEfZ48Go1Yn5Ms15D" onclick="selectSize(this)">3XL</div>
+        </div>
+        <!-- Taille en rupture de stock exemple -->
+        <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
+        <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
+        <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
+        <p id="errorMessage" class="error-message">Please select a size.</p>
 
-        function nextSlide() {
-            if (isTransitioning) return;
-            isTransitioning = true;
-            index++;
-            updateCarousel();
-        }
+        <div class="payment-carousel">
+            <div class="payment-list">
+                <img src="https://i.imgur.com/sb3suRq.png" alt="Card">
+                <img src="https://i.imgur.com/jryoqmV.png" alt="Apple Pay">
+                <img src="https://i.imgur.com/2h3gcxW.png" alt="Google Pay">
+                <img src="https://i.imgur.com/KH7uotH.png" alt="iDeal">
+                <img src="https://i.imgur.com/75oxo3K.png" alt="Revolut">
+                <img src="https://i.imgur.com/yMmP1GJ.png" alt="Klarna.">
+                <img src="https://i.imgur.com/4TqnhnQ.png" alt="Link">
+                <img src="https://i.imgur.com/RRkUHp9.jpeg" alt="EPS">
+                <img src="https://i.imgur.com/IAAtHmT.jpeg" alt="Blik">
+                <img src="https://i.imgur.com/X2vki8D.png" alt="Bancontact">
+                <!-- Ajoute d'autres icônes de paiement ici -->
+            </div>
+        </div>
 
-        function prevSlide() {
-            if (isTransitioning) return;
-            isTransitioning = true;
-            index--;
-            updateCarousel();
-        }
+        <div class="free-shipping">
+            Livraison gratuite
+        </div>
 
-        function updateCarousel() {
-            carouselContent.style.transition = 'transform 1s linear';
-            carouselContent.style.transform = `translateX(-${index * 100}%)`;
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-title" onclick="toggleAccordion('desc')">
+                    Descriptif <span class="arrow"><i class="fas fa-chevron-up"></i></span>
+                </div>
+                <div class="accordion-content" id="desc">
+                    Description du produit ici...
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-title" onclick="toggleAccordion('comp')">
+                    Composition <span class="arrow"><i class="fas fa-chevron-up"></i></span>
+                </div>
+                <div class="accordion-content" id="comp">
+                    Composition du produit ici...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            carouselContent.addEventListener('transitionend', () => {
-                if (index === items.length) {
-                    carouselContent.style.transition = 'none';
-                    index = 0;
-                    carouselContent.style.transform = `translateX(0)`;
-                } else if (index === -1) {
-                    carouselContent.style.transition = 'none';
-                    index = items.length - 2;
-                    carouselContent.style.transform = `translateX(-${index * 100}%)`;
-                }
-                isTransitioning = false;
-            }, { once: true });
-        }
+<!-- Overlay pour afficher la photo en grand -->
+<div id="overlay" class="overlay" style="display:none;">
+    <div class="overlay-content">
+        <img id="overlay-photo" src="" alt="Photo Agrandie">
+        <span class="close-overlay" onclick="closePhoto()">×</span>
+    </div>
+</div>
 
-        let autoScroll = setInterval(nextSlide, 4000);
-
-        document.querySelector('.carousel-container').addEventListener('mouseenter', () => {
-            clearInterval(autoScroll);
-        });
-
-        document.querySelector('.carousel-container').addEventListener('mouseleave', () => {
-            autoScroll = setInterval(nextSlide, 4000);
-        });
-    </script>
-
-    <script>
-        function toggleBurgerMenu() {
-            const burgerIcon = document.querySelector('.burger-icon');
-            const burgerDropdown = document.querySelector('.burger-dropdown');
-            burgerIcon.classList.toggle('active');
-            burgerDropdown.classList.toggle('active');
-        }
-    </script>
-
-    <!-------------------------------------------------- Compte à rebours -------------------------------------------------->
-    <script>
-        // Set the date for the end of the winter sales (e.g., 31st January 2025 at 23:59:59)
-        var saleEndDate = new Date("Feb 04, 2025 23:59:59").getTime();
-
-        // Update the countdown every 1 second
-        var countdown = setInterval(function() {
-            var now = new Date().getTime();
-            var timeRemaining = saleEndDate - now;
-
-            // Calculate days, hours, minutes, and seconds
-            var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-            // Display the result
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-            // If the countdown is over
-            if (timeRemaining < 0) {
-                clearInterval(countdown);
-                document.getElementById("countdown").innerHTML = "The sales have ended!";
-            }
-        }, 1000);
-
-    function toggleBurgerMenu() {
-        const menu = document.querySelector('.burger-dropdown');
-        const icon = document.querySelector('.burger-icon');
-        const expanded = icon.getAttribute('aria-expanded') === 'true';
-
-        menu.classList.toggle('active');
-        icon.classList.toggle('active');
-        icon.setAttribute('aria-expanded', !expanded);
-    }
-    </script>
-
-<script>
-    const openMenuBtn = document.getElementById('openMenu');
-    const closeMenuBtn = document.getElementById('closeMenu');
-    const menu = document.getElementById('menu');
-    const header = document.getElementById('header');
-
-    openMenuBtn.addEventListener('click', () => {
-      menu.classList.add('open');
-      header.classList.add('hidden');
-    });
-
-    closeMenuBtn.addEventListener('click', () => {
-      menu.classList.remove('open');
-      header.classList.remove('hidden');
-    });
-</script>
 </body>
 </html>

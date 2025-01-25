@@ -179,3 +179,7 @@ function toggleFilterMenu() {
         dot.classList.add('active');
     });
     });
+
+    function closeWindow() {
+        window.close(); // Ferme la fenêtre actuelle
+      }
