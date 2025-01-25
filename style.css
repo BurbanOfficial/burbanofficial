@@ -111,6 +111,29 @@ body {
     }
 }
 
+/* Petites tablettes et grands téléphones (portrait, largeur entre 481px et 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .thumbnail-container {
+        display: flex;
+        margin-top: 200px;
+        margin-left: 90px;
+        gap: 15px;  /* Espacement entre les images */
+        border-radius: 18px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .thumbnail-container1 {
+        display: flex;
+        margin-top: 20px;
+        margin-left: 90px;
+        gap: 15px;  /* Espacement entre les images */
+        border-radius: 18px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+  }
+
 .thumbnail-container1 {
     display: flex;
     margin-top: 20px;
