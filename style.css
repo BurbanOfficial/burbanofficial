@@ -90,70 +90,22 @@ body {
 
 /* Tablettes (paysage) et petits ordinateurs portables (largeur entre 769px et 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .thumbnail-container {
-        display: flex;
-        margin-top: 350px;
-        margin-left: 90px;
-        gap: 15px;  /* Espacement entre les images */
-        border-radius: 18px;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
-    .thumbnail-container1 {
-        display: flex;
-        margin-top: 20px;
-        margin-left: 90px;
-        gap: 15px;  /* Espacement entre les images */
-        border-radius: 18px;
-        flex-wrap: wrap;
-        align-items: center;
+    .left .gallery {
+        display: none;
     }
 }
 
 /* Petites tablettes et grands téléphones (portrait, largeur entre 481px et 768px) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    .thumbnail-container {
-        display: flex;
-        margin-top: 200px;
-        margin-left: 90px;
-        gap: 15px;  /* Espacement entre les images */
-        border-radius: 18px;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
-    .thumbnail-container1 {
-        display: flex;
-        margin-top: 20px;
-        margin-left: 90px;
-        gap: 15px;  /* Espacement entre les images */
-        border-radius: 18px;
-        flex-wrap: wrap;
-        align-items: center;
+    .left .gallery {
+        display: none;
     }
 }
 
 /* Ordinateurs standards (largeur entre 1025px et 1440px) */
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-    .thumbnail-container {
-        display: flex;
-        margin-top: 200px;
-        margin-left: 90px;
-        gap: 15px;  /* Espacement entre les images */
-        border-radius: 18px;
-        flex-wrap: wrap;
-        align-items: center;
-    }
-
-    .thumbnail-container1 {
-        display: flex;
-        margin-top: 20px;
-        margin-left: 90px;
-        gap: 15px;  /* Espacement entre les images */
-        border-radius: 18px;
-        flex-wrap: wrap;
-        align-items: center;
+@media screen and (min-width: 1025px) and (max-width: 1850px) {
+    .left .gallery {
+        display: none;
     }
 }
 
@@ -211,17 +163,20 @@ body {
 }
 
 .free-shipping {
-    background-color: #ffeb3b;
+    background-color: #d1e7f8;
     padding: 10px;
     text-align: center;
+    border-radius: 8px;
 }
 
 .accordion {
     margin-top: 20px;
+    border-radius: 8px;
 }
 
 .accordion-item {
     margin-bottom: 10px;
+    border-radius: 8px;
 }
 
 .accordion-title {
@@ -229,12 +184,16 @@ body {
     padding: 10px;
     cursor: pointer;
     font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .accordion-content {
     display: none;
     padding: 10px;
     background-color: #f9f9f9;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .arrow {
@@ -312,6 +271,54 @@ body {
     }
   }
 
+  /* Tablettes (paysage) et petits ordinateurs portables (largeur entre 769px et 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .carousel {
+        display: flex;
+        margin-bottom: 30px; /* Ajout d'un espace sous le carrousel */
+        width: 200%; /* Forcer le carrousel à prendre toute la largeur */
+        margin-right: 150px;
+      }
+
+    .carousel-images {
+        display: block;
+        transition: transform 0.5s ease-in-out;
+        min-height: 300px;
+        min-width: 300px;
+    }
+
+    .carousel-images img {
+        margin-bottom: 30px;
+        margin-left: auto; /* Centrer l'image horizontalement */
+        margin-right: auto; /* Centrer l'image horizontalement */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1850px) {
+    .carousel {
+        display: flex;
+        margin-bottom: 30px; /* Ajout d'un espace sous le carrousel */
+        width: 100%; /* Forcer le carrousel à prendre toute la largeur */
+        margin-right: 150px;
+      }
+
+    .carousel-images {
+        display: block;
+        transition: transform 0.5s ease-in-out;
+        min-height: 400px;
+        min-width: 400px;
+    }
+
+    .carousel-images img {
+        margin-bottom: 30px;
+        margin-left: auto; /* Centrer l'image horizontalement */
+        margin-right: auto; /* Centrer l'image horizontalement */
+    }
+}
+
+  
+
   .carousel-images {
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -384,18 +391,20 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-left: 40px;
+    border-radius: 50px;
   }
   
   #closeButton i {
     font-size: 18px;
-    transform: rotate(180deg); /* Rotation de l'icône */
+    transform: rotate(0deg); /* Rotation de l'icône */
+    margin-top: 2px;
   }
   
   #closeButton:hover {
-    background-color: #d32f2f;
+    background-color: #d1e7f8;
+    border-radius: 50px;
   }
 
 /* Boutique en ligne (CSS ancienne version) */

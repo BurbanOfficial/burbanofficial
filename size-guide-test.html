@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide des tailles</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=bevellier@700,500,400&display=swap" rel="stylesheet">
+    <style>
+        /* Styles du guide des tailles */
+        .size-guide-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .size-guide-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .size-guide-image {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .size-guide-text {
+            max-width: 600px;
+        }
+
+        .size-guide-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .size-guide-table th,
+        .size-guide-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .size-guide-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        .size-guide-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .size-guide-info {
+            background-color: #d1e7f8;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .size-guide-info p {
+            margin: 0;
+        }
+
+        .image-container {
+            text-align: center; /* Centrer l'image horizontalement */
+            margin-bottom: 20px; /* Espacement entre l'image et le tableau */
+        }
+
+        .centered-image {
+            width: 100%; /* Ajuste la taille de l'image à la largeur du conteneur */
+            max-width: 600px; /* Définit une largeur maximale pour l'image */
+            height: auto; /* Conserve les proportions de l'image */
+        }
+
+        .size-guide-text-explanations {
+            text-align: left;
+            background-color: #d1e7f8;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="size-guide-container">
+        <!-- Image et texte explicatif -->
+        <div class="size-guide-header">
+            <img src="https://i.imgur.com/1KGcrXV.png" alt="Guide des tailles" class="size-guide-image">
+            <div class="size-guide-text">
+                <p>Découvrez notre guide des tailles pour choisir la taille parfaite pour vous. Si vous avez des doutes, n'hésitez pas à consulter notre tableau ci-dessous !</p>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://i.imgur.com/zxDk1i2.png" alt="Image au-dessus du tableau" class="centered-image">
+            <div class="size-guide-text-explanations">
+                <p><strong>A - Longueur</strong><br><br>Placez l’extrémité du mètre du collier en haut
+                    du T-Shirt (point le plus haut de l’épaule).
+                    <br>Tirez le mètre jusqu’au bas du T-Shirt. </p>
+
+                <p><strong>A - Longueur</strong><br><br>Placez l’extrémité du mètre du collier en haut
+                    du T-Shirt (point le plus haut de l’épaule).
+                    Tirez le mètre jusqu’au bas du T-Shirt. </p>
+            </div>
+        </div>
+
+        <!-- Tableau des tailles -->
+        <table class="size-guide-table">
+            <thead>
+                <tr>
+                    <th>Taille</th>
+                    <th>Tour de poitrine (cm)</th>
+                    <th>Tour de taille (cm)</th>
+                    <th>Tour de hanches (cm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>S</td>
+                    <td>86-91</td>
+                    <td>71-76</td>
+                    <td>91-96</td>
+                </tr>
+                <tr>
+                    <td>M</td>
+                    <td>92-97</td>
+                    <td>77-82</td>
+                    <td>97-102</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>98-103</td>
+                    <td>83-88</td>
+                    <td>103-108</td>
+                </tr>
+                <tr>
+                    <td>XL</td>
+                    <td>104-109</td>
+                    <td>89-94</td>
+                    <td>109-114</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Encadré d'informations sous le tableau -->
+        <div class="size-guide-info">
+            <p><strong>Conseils :</strong> Si vous hésitez entre deux tailles, nous vous recommandons de choisir la taille supérieure pour un meilleur confort.</p>
+        </div>
+    </div>
+
+        <div style="font-size: 14px; font-family: bevelier, sans-serif;">
+            <strong>&copy; 2024 - <span id="year"></span> Burban. All Rights Reserved.</strong>
+        </div>
+
+    <script>
+        // Mise à jour automatique de l'année
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

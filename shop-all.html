@@ -7,6 +7,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=bevellier@700,500,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <!-- Favicon -->
     <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" type="image/png">
@@ -39,16 +40,9 @@
         <nav>
             <ul class="menu">
                 <li>
-                    <a href="index.html">Home</a>
+                    <li><a href="index.html">Home</a></li>
                 </li>
-                <li class="submenu">
-                    <a href="shop.html">Shop</a>
-                    <ul class="dropdown">
-                        <li><a href="shop-all.html">All</a></li>
-                        <li><a href="shop-hoodies.html">Hoodies</a></li>
-                        <li><a href="shop-tshirts.html">T-Shirts & Polo</a></li>
-                        <li><a href="shop-caps.html">Caps & Beanies</a></li>
-                    </ul>
+                    <li class="active"><a href="shop.html">Shop</a></li>
                 </li>
                 <li>
                     <a href="burban-is-committed.html">Burban is committed</a>
@@ -62,23 +56,22 @@
             <a class="sign-up" href="signup.html">Sign Up</a>
         </div>
         <!-- Menu Burger -->
-    <div class="burger-menu">
-        <div class="burger-icon" onclick="toggleBurgerMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="burger-menu">
+            <div class="burger-icon" onclick="toggleBurgerMenu()">
+                <i class="fa-solid fa-bars"></i> <!-- Icône menu hamburger -->
+                <i class="fa-solid fa-xmark"></i> <!-- Icône croix -->
+            </div>
+            <ul class="burger-dropdown">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop-all.html">Shop</a></li>
+                <li><a href="#burban-is-commited">Burban is committed</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        <ul class="burger-dropdown">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop-all.html">Shop</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
     </header>
 
     <!------------------------------------------------------------------------------------------ Boutique ------------------------------------------------------------------------------------------>
-    <object data="all.html" type="text/html" style="width: 100%; height: 160vh; border: none;"></object>
+    <object data="all.html" type="text/html" class="online-shop"></object>
         
         <!------------------------------------------------------------------------------------------ Pied de page ------------------------------------------------------------------------------------------>
         <!-- Section Bannière -->
@@ -200,5 +193,20 @@
             }
         }, 1000);
     </script>
+
+<script>
+    // Sélectionner tous les liens du menu
+    const menuLinks = document.querySelectorAll('.menu a');
+    
+    // Récupérer l'URL actuelle
+    const currentUrl = window.location.href;
+    
+    // Ajouter la classe active au lien correspondant
+    menuLinks.forEach(link => {
+        if (link.href === currentUrl) {
+            link.parentElement.classList.add('active');
+        }
+    });
+</script>
 </body>
 </html>

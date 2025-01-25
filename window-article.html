@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Produit</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=bevellier@700,500,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+    <script src="script.js" defer></script> <!-- Lien vers le fichier JavaScript -->
+</head>
+<body>
+
+<button id="closeButton" onclick="closeWindow()"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;&nbsp;Return to the store</button>
+
+<div class="container">
+    <div class="left">
+        <div class="gallery">
+            <img class="main-photo" src="https://i.imgur.com/TWNLwlA.jpeg" alt="Main Photo">
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="https://i.imgur.com/pMxnN34.jpeg" alt="Photo 1">
+                <img class="thumbnail" src="https://i.imgur.com/nwyumaO.jpeg" alt="Photo 2">
+                <img class="thumbnail" src="https://i.imgur.com/9X9nUTN.jpeg" alt="Photo 3">
+            </div>
+            <div class="thumbnail-container1">
+                <img class="thumbnail" src="https://i.imgur.com/qILNQjt.jpeg" alt="Photo 4">
+                <img class="thumbnail" src="https://i.imgur.com/XLchSuO.jpeg" alt="Photo 5">
+            </div>
+        </div>
+    </div>
+
+    <div id="carousel1" class="carousel">
+        <div class="carousel-images">
+          <img src="https://i.imgur.com/TWNLwlA.jpeg" alt="Image 1">
+          <img src="https://i.imgur.com/nwyumaO.jpeg" alt="Image 2">
+          <img src="https://i.imgur.com/9X9nUTN.jpeg" alt="Image 3">
+        </div>
+        <div class="carousel-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+        </div>
+    </div>
+      
+    <div class="right">
+        <h1><strong>Titre du Produit</strong></h1>
+        <p class="price">€29,99</p>
+        
+        <br><label for="color">Would you like to see another color?</label>
+        <div class="similar-articles">
+            <div class="similar-articles-container">
+                <div class="product-card2" onclick="openModal('produit5 - Marine')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#112537" style="background-color: #112537;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Bordeaux')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#801f24" style="background-color: #801f24;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Anthracite')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#3e383e" style="background-color: #3e383e;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Bleu chiné foncé')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#7a8ca8" style="background-color: #7a8ca8;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Gris chiné')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#cfcbc8" style="background-color: #cfcbc8;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Lavender')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#f7ecff" style="background-color: #f7ecff;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openModal('produit5 - Blanc')">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#fff" style="background-color: #fff;"></div>
+                    </div>
+                </div>
+                <!-- Ajoutez d'autres produits similaires ici -->
+            </div>
+        </div>
+
+        <br><label for="size">Taille</label>
+        <div class="size-selection">
+            <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
+            <div class="size-option" data-link="https://buy.stripe.com/aEUbIO2i0auT7UAg0s" onclick="selectSize(this)">S</div>
+            <div class="size-option" data-link="https://buy.stripe.com/9AQ7sy8Go9qPb6MbKd" onclick="selectSize(this)">M</div>
+            <div class="size-option" data-link="https://buy.stripe.com/6oE4gme0I7iHb6M8y2" onclick="selectSize(this)">L</div>
+            <div class="size-option" data-link="https://buy.stripe.com/4gw9AGbSA6eDeiYbKf" onclick="selectSize(this)">XL</div>
+            <div class="size-option" data-link="https://buy.stripe.com/aEUaEK9KsfPd6Qw8y4" onclick="selectSize(this)">2XL</div>
+            <div class="size-option" data-link="https://buy.stripe.com/6oEfZ48Go1Yn5Ms15D" onclick="selectSize(this)">3XL</div>
+        </div>
+        <!-- Taille en rupture de stock exemple -->
+        <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
+        <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideTest()">Size guide&nbsp;&nbsp;<i class="fa-solid fa-ruler"></i></button>
+        <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment&nbsp;&nbsp;<i class="fa-solid fa-credit-card"></i></button>
+        <p id="errorMessage" class="error-message">Please select a size.</p>
+
+        <div class="payment-carousel">
+            <div class="payment-list">
+                <img src="https://i.imgur.com/sb3suRq.png" alt="Card">
+                <img src="https://i.imgur.com/jryoqmV.png" alt="Apple Pay">
+                <img src="https://i.imgur.com/2h3gcxW.png" alt="Google Pay">
+                <img src="https://i.imgur.com/KH7uotH.png" alt="iDeal">
+                <img src="https://i.imgur.com/75oxo3K.png" alt="Revolut">
+                <img src="https://i.imgur.com/yMmP1GJ.png" alt="Klarna.">
+                <img src="https://i.imgur.com/4TqnhnQ.png" alt="Link">
+                <img src="https://i.imgur.com/RRkUHp9.jpeg" alt="EPS">
+                <img src="https://i.imgur.com/IAAtHmT.jpeg" alt="Blik">
+                <img src="https://i.imgur.com/X2vki8D.png" alt="Bancontact">
+                <!-- Ajoute d'autres icônes de paiement ici -->
+            </div>
+        </div>
+
+        <div class="free-shipping">
+            Livraison gratuite
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-title" onclick="toggleAccordion('desc')">
+                    Descriptif <span class="arrow"><i class="fas fa-chevron-up"></i></span>
+                </div>
+                <div class="accordion-content" id="desc">
+                    Description du produit ici...
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-title" onclick="toggleAccordion('comp')">
+                    Composition <span class="arrow"><i class="fas fa-chevron-up"></i></span>
+                </div>
+                <div class="accordion-content" id="comp">
+                    Composition du produit ici...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay pour afficher la photo en grand -->
+<div id="overlay" class="overlay" style="display:none;">
+    <div class="overlay-content">
+        <img id="overlay-photo" src="" alt="Photo Agrandie">
+        <span class="close-overlay" onclick="closePhoto()">×</span>
+    </div>
+</div>
+
+<script>
+    function openSizeGuideTest() {
+        window.open('size-guide-test.html', '_blank');
+    }
+</script>
+</body>
+</html>
