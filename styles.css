@@ -316,14 +316,14 @@ footer {
 
 @media (max-width: 768px) {
     .online-shop {
-        height: 750vh;
+        height: 1000vh;
     }
 }
 
 /* Tablettes (paysage) et petits ordinateurs portables (largeur entre 769px et 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .online-shop {
-        height: 340vh;
+        height: 300vh;
     }
 }
 
