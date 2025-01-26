@@ -9,12 +9,12 @@
     <link href="https://api.fontshare.com/v2/css?f[]=bevellier@700,500,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <!-- Favicon -->
-    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" type="image/png">
-    <link rel="apple-touch-icon" href="https://i.imgur.com/2WJy3QD.png">
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/uR1AoK9.png">
     <!-- Favicon pour les navigateurs modernes -->
-    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" sizes="16x16" />
-    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" sizes="32x32" />
-    <link rel="icon" href="https://i.imgur.com/2WJy3QD.png" sizes="48x48" />
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" sizes="16x16" />
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" sizes="32x32" />
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" sizes="48x48" />
 </head>
 <body>
     <div class="carousel-container">
@@ -62,23 +62,22 @@
             <a class="sign-up" href="signup.html">Sign Up</a>
         </div>
         <!-- Menu Burger -->
-    <div class="burger-menu">
-        <div class="burger-icon" onclick="toggleBurgerMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="burger-menu">
+            <div class="burger-icon" onclick="toggleBurgerMenu()">
+                <i class="fa-solid fa-bars"></i> <!-- Icône menu hamburger -->
+                <i class="fa-solid fa-xmark"></i> <!-- Icône croix -->
+            </div>
+            <ul class="burger-dropdown">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop-all.html">Shop</a></li>
+                <li><a href="#burban-is-commited">Burban is committed</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        <ul class="burger-dropdown">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop-all.html">Shop</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
     </header>
 
     <!------------------------------------------------------------------------------------------ Sign Up ------------------------------------------------------------------------------------------>
-    <iframe width="1980" height="810" src="https://414710dc.sibforms.com/serve/MUIFABXk9MmvpQAp3B641OgDo1oHx4TqeR4uNCT3R0qSQDFl_tZFq4ZfrMB5AnC03OKx_tzR6uBCZ396i_NsYXyZ8IdPqDZBghdM4_d95qyv5xD1rXhiRB12bdG_G843oz-6w-f5QY4BFtUh-0M42JdbVBMRB233pl7qeMuoYFQvkyweKvJiSd6-zjZ5_Uq2rKdOO01xlX0Ylx-9" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+    <iframe width="1980" height="900" src="https://414710dc.sibforms.com/serve/MUIFABXk9MmvpQAp3B641OgDo1oHx4TqeR4uNCT3R0qSQDFl_tZFq4ZfrMB5AnC03OKx_tzR6uBCZ396i_NsYXyZ8IdPqDZBghdM4_d95qyv5xD1rXhiRB12bdG_G843oz-6w-f5QY4BFtUh-0M42JdbVBMRB233pl7qeMuoYFQvkyweKvJiSd6-zjZ5_Uq2rKdOO01xlX0Ylx-9" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
     
     <!------------------------------------------------------------------------------------------ Pied de page ------------------------------------------------------------------------------------------>
     <!-- Section Bannière -->
@@ -166,11 +165,28 @@
         });
     </script>
 
-      <script>
+    <script>
         function toggleBurgerMenu() {
-            const dropdown = document.querySelector('.burger-dropdown');
-            dropdown.classList.toggle('active');
+            const burgerIcon = document.querySelector('.burger-icon');
+            const burgerDropdown = document.querySelector('.burger-dropdown');
+            burgerIcon.classList.toggle('active');
+            burgerDropdown.classList.toggle('active');
         }
+    </script>
+
+    <script>
+        // Sélectionner tous les liens du menu
+        const menuLinks = document.querySelectorAll('.menu a');
+        
+        // Récupérer l'URL actuelle
+        const currentUrl = window.location.href;
+        
+        // Ajouter la classe active au lien correspondant
+        menuLinks.forEach(link => {
+            if (link.href === currentUrl) {
+                link.parentElement.classList.add('active');
+            }
+        });
     </script>
 </body>
 </html>

@@ -134,6 +134,7 @@ body {
 .price {
     margin-top: 10px;
     font-size: 1.5em;
+    font-family: satoshi, sans-serif;
 }
 
 .color-choice, .size-choice {

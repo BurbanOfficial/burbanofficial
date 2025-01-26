@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Shop | EN</title>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/uR1AoK9.png">
+    <!-- Favicon pour les navigateurs modernes -->
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" sizes="16x16" />
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" sizes="32x32" />
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" sizes="48x48" />
     <style>
         /* Styles généraux */
         body {
@@ -730,7 +737,7 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="t-shirt" data-color="blanc bleuciel rose argent jaune naturel" data-price="25" onmouseover="showImage(this, 'https://i.imgur.com/JUTOhrC.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/ixxq2Oy.jpeg')" onclick="openModal('produit14 - Baby Blue')">
+        <div class="product-card" data-category="t-shirt" data-color="blanc bleuciel rose argent jaune naturel" data-price="25" onmouseover="showImage(this, 'https://i.imgur.com/JUTOhrC.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/ixxq2Oy.jpeg')" onclick="openProductPageProduct14BabyBlue()">
             <!-- Étiquette respectueuse de l'environnement -->
             <div class="eco-label">
                 <span class="eco-icon">🌱</span>
@@ -753,7 +760,7 @@
                     <div class="color-circle" style="background-color: #fff;"></div>
                 </div>
                 <p class="product-price">25,00€</p>
-                <button class="view-product-button" onclick="openModal('produit14 - Baby Blue'); event.stopPropagation();">Discover</button>
+                <button class="view-product-button" onclick="openProductPageProduct14BabyBlue(); event.stopPropagation();">Discover</button>
             </div>
         </div>
 
@@ -3065,493 +3072,6 @@
                 <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
                 <p id="errorMessage" class="error-message">Please select a size.</p>
             `;
-        } if (productId === 'produit14 - Baby Blue') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Baby Blue)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/CHxj3Cs.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/ixxq2Oy.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Ipp0aH2.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/RCnZ1I5.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Wxmx05E.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/YTtg0ah.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality baby blue t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit14 - Soft Pink')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#ffd8e1" style="background-color: #ffd8e1;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Silver')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#e3e3dd" style="background-color: #e3e3dd;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Natural')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fef1d1" style="background-color: #fef1d1;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Lemon')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f7fee5" style="background-color: #f7fee5;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - White')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fff" style="background-color: #fff;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/28oaEK4q8cD11wc2ca" onclick="selectSize(this)">XS</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/dR6bIOf4MbyXcaQbML" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/fZedQW5ucgTh6QwaII" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN26ou7CkdH55Ms9EF" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/8wMaEK5uceL93Ekg34" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN214a1dW8mL6QwaIM" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/14k3cibSAdH58YE9EH" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit14 - Soft Pink') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Soft Pink)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/oAUACMc.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/SvGQ9w2.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/GurmrZJ.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/ugqTDfA.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Zg39RhG.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Ju1iHIG.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality soft pink t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit14 - Baby Blue')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#c7d7ef" style="background-color: #c7d7ef;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Silver')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#e3e3dd" style="background-color: #e3e3dd;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Natural')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fef1d1" style="background-color: #fef1d1;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Lemon')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f7fee5" style="background-color: #f7fee5;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - White')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fff" style="background-color: #fff;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/dR6cMSf4M6eD0s818d" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/dR628e3m41Yn4IocQW" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/9AQbIO6ygdH5gr6cQX" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/14keV06ygdH52Ag3go" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/bIY8wCcWE7iHfn2eZ7" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/fZe4gm4q8byXcaQ5oy" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit14 - Silver') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Silver)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/5d4hiDN.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/yVQw4pw.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/EqO0qNQ.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/MX2yPnW.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/0Q3Q5Ek.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/kRIR2VQ.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality silver t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit14 - Baby Blue')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#c7d7ef" style="background-color: #c7d7ef;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Soft Pink')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#ffd8e1" style="background-color: #ffd8e1;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Natural')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fef1d1" style="background-color: #fef1d1;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Lemon')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f7fee5" style="background-color: #f7fee5;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - White')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fff" style="background-color: #fff;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/cN228eaOw7iH5MsaIT" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/dR6dQWg8Q46v0s83gs" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/5kA14aaOw7iH7UA4kx" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/9AQ0066yg5az1wc6sG" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/bIY14a4q86eDdeUdV9" onclick="selectSize(this)">2XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit14 - Natural') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Natural)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/7cPCB84.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/m3ucIp2.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/G6mpvtl.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/eCPCQbn.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/YdreT9r.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/erBQck9.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality natural t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit14 - Baby Blue')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#c7d7ef" style="background-color: #c7d7ef;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Soft Pink')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#ffd8e1" style="background-color: #ffd8e1;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Silver')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#e3e3dd" style="background-color: #e3e3dd;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Lemon')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f7fee5" style="background-color: #f7fee5;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - White')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fff" style="background-color: #fff;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/7sI9AG6yg6eDgr64kB" onclick="selectSize(this)">XS</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/bIYbIOe0I46v4Io6sI" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/8wM14aaOweL9deU18q" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/bIY4gmg8Q5az0s88AT" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/4gwfZ41dWdH5deU7wQ" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/fZe8wCe0I6eDgr6cRb" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/9AQ0061dWeL96QwaJ4" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit14 - Lemon') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Lemon)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/HtBrZac.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/XgxQ3uA.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/9XYvxbg.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/J2GTW4l.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/rpfnVTW.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/QguwhtO.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality lemon t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit14 - Baby Blue')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#c7d7ef" style="background-color: #c7d7ef;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Soft Pink')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#ffd8e1" style="background-color: #ffd8e1;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Silver')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#e3e3dd" style="background-color: #e3e3dd;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Natural')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fef1d1" style="background-color: #fef1d1;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - White')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fff" style="background-color: #fff;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/dR6bIO1dWgThdeU7wT" onclick="selectSize(this)">XS</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/bIYeV009SauTgr618w" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/8wM28ecWEbyX1wc8AZ" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/aEU5kq2i01YneiY18y" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/00gdQW7Ck8mL0s8cRh" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN2dQW6ygfPd2AgbNe" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/00g5kq5uc6eDb6M8B3" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit14 - White') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (White)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/TWNLwlA.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/pMxnN34.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/nwyumaO.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/9X9nUTN.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/qILNQjt.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/XLchSuO.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality white t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit14 - Baby Blue')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#c7d7ef" style="background-color: #c7d7ef;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Soft Pink')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#ffd8e1" style="background-color: #ffd8e1;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Silver')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#e3e3dd" style="background-color: #e3e3dd;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Natural')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fef1d1" style="background-color: #fef1d1;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit14 - Lemon')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f7fee5" style="background-color: #f7fee5;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/3cs3cie0IfPd4IobNg" onclick="selectSize(this)">XS</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/00g8wCe0I8mL4Io6sX" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/fZe14ag8Q1Yngr6cRm" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/00geV09Ks1Yn4IocRn" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN26ou2i0cD1b6M18G" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/6oEfZ4e0IcD11wcaJh" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/8wM4gmaOw6eD7UA2cM" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit15') {
-            modalBody.innerHTML = `
-                <h2>Morning Sweets - T-Shirt</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/7sIbmpM.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/3EAiQad.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/zyFbK39.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/FmlkmD0.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/rxiDidM.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/IYQp1Om.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/FSIvDkF.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/C1Q3Jyp.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/y9i9bl7.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/WBDmCKA.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 33,99€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/8wM0065uc7iH3Ek5oZ" onclick="selectSize(this)">XS</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/8wM3ci8Go8mL6Qw7x8" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN2bIO3m4auT0s85p1" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/6oEfZ43m446vfn2bNq" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/4gw5kq09SfPdfn28Bf" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/4gw14a9Ks46vdeU4l0" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/9AQ4gmg8Q9qP6Qw7xd" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
             }
         
             modal.style.display = "block";
@@ -3731,7 +3251,37 @@ function toggleFilterMenu() {
 <script>
 function openProductPageProduct15() {
     // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
-    window.open('window-article.html', '_blank');
+    window.open('morning-sweets-ar00039.html', '_blank');
+}
+
+function openProductPageProduct14BabyBlue() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('skate-ar00033.html', '_blank');
+}
+
+function openProductPageProduct14SoftPink() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('skate-ar00034.html', '_blank');
+}
+
+function openProductPageProduct14Silver() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('skate-ar00035.html', '_blank');
+}
+
+function openProductPageProduct14White() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('skate-ar00038.html', '_blank');
+}
+
+function openProductPageProduct14Natural() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('skate-ar00036.html', '_blank');
+}
+
+function openProductPageProduct14Lemon() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('skate-ar00037.html', '_blank');
 }
 </script>
 
