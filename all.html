@@ -764,7 +764,7 @@
             </div>
         </div>
 
-        <div class="product-card" data-category="t-shirt" data-color="noir bleu violet vertfoncé bordeaux" data-price="25" onmouseover="showImage(this, 'https://i.imgur.com/MfMDyHm.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/raX8jWO.jpeg')" onclick="openModal('produit13 - Forest')">
+        <div class="product-card" data-category="t-shirt" data-color="noir bleu violet vertfoncé bordeaux" data-price="25" onmouseover="showImage(this, 'https://i.imgur.com/MfMDyHm.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/raX8jWO.jpeg')" onclick="openProductPageProduct13Forest()">
             <!-- Étiquette respectueuse de l'environnement -->
             <div class="eco-label">
                 <span class="eco-icon">🌱</span>
@@ -787,7 +787,7 @@
                     <div class="color-circle" style="background-color: #536ba7;"></div>
                 </div>
                 <p class="product-price">25,00€</p>
-                <button class="view-product-button" onclick="openModal('produit13 - Forest'); event.stopPropagation();">Discover</button>
+                <button class="view-product-button" onclick="openProductPageProduct13Forest(); event.stopPropagation();">Discover</button>
             </div>
         </div>
 
@@ -2631,374 +2631,6 @@
                 <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
                 <p id="errorMessage" class="error-message">Please select a size.</p>
             `;
-        } if (productId === 'produit13 - Forest') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Forest)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/MBLqsUd.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/raX8jWO.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/McvJjFL.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/5GPEso2.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/h4pNqMy.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/CXjgmDt.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality forest t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit13 - Black')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#0c0c0c" style="background-color: #0c0c0c;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Oxblood Black')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#2c1013" style="background-color: #2c1013;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Team Purple')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#230f46" style="background-color: #230f46;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Maroon')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#721d37" style="background-color: #721d37;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Heather True Royal')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#536ba7" style="background-color: #536ba7;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/dR6cMSbSA46va2I17t" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/dR6dQW2i09qP8YE2by" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/bIY4gm09S8mL7UA4jH" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/7sI8wCg8QeL92AgaI6" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/4gwbIO8GofPdfn2bMb" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN228eaOwdH56Qw9E4" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit13 - Black') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Black)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/jiaE1k6.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Fa6GAFe.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/LpUgDm5.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/OZWFXnc.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/CAypxjD.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/KEIYGXh.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality black t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit13 - Forest')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#223e25" style="background-color: #223e25;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Oxblood Black')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#2c1013" style="background-color: #2c1013;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Team Purple')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#230f46" style="background-color: #230f46;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Maroon')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#721d37" style="background-color: #721d37;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Heather True Royal')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#536ba7" style="background-color: #536ba7;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/aEU4gm4q846va2I5nP" onclick="selectSize(this)">XS</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN20065uc6eDeiY7vY" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/14k006e0I46v5MscQj" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/7sI4gm1dW32r5MsbMg" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/14k8wC3m4cD16QwdUp" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/5kAbIO5ucgTh3Ek2bI" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/3csfZ46yg9qP3Ek5nV" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit13 - Oxblood Black') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Oxblood Black)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/xsnQT4u.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/QwcoGKT.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/NCCTDQh.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/CQImHyu.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/piMFCK4.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Ui1Dzmu.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality oxblood black t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit13 - Forest')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#223e25" style="background-color: #223e25;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Black')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#0c0c0c" style="background-color: #0c0c0c;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Team Purple')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#230f46" style="background-color: #230f46;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Maroon')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#721d37" style="background-color: #721d37;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Heather True Royal')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#536ba7" style="background-color: #536ba7;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/7sI28e3m41YndeU03C" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/aEUeV0cWEbyX3Ek3fP" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/fZefZ4g8QauTfn2bMm" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/28oaEKbSAcD13Ek2bN" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/3cs28e09S46v3Ek2bO" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/6oE3ci6yg0Uja2I2bP" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit13 - Team Purple') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Team Purple)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/G0JXj2v.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/uDRH4XC.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/aJwFQa1.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Q8xMoxZ.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/GPUxVje.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/SSCRA54.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality team purple t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit13 - Forest')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#223e25" style="background-color: #223e25;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Black')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#0c0c0c" style="background-color: #0c0c0c;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Oxblood Black')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#2c1013" style="background-color: #2c1013;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Maroon')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#721d37" style="background-color: #721d37;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Heather True Royal')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#536ba7" style="background-color: #536ba7;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/eVa7sye0IgTh7UA5o2" onclick="selectSize(this)">XS</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/dR69AG2i08mLeiY9Ej" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/4gwaEKg8Q9qPdeU7wc" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/eVa00609S6eD7UAbMt" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/9AQbIO8GoeL9caQg2K" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/28o8wCf4M8mL2Ag5o7" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/5kAcMS4q80Uj5Ms7wg" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit13 - Maroon') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Maroon)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/Dk81rN0.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/5Y2S7cE.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/dhbowzC.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/M7XLnxl.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/hXILqmS.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Jt4zRfR.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality maroon t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit13 - Forest')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#223e25" style="background-color: #223e25;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Black')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#0c0c0c" style="background-color: #0c0c0c;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Oxblood Black')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#2c1013" style="background-color: #2c1013;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Team Purple')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#230f46" style="background-color: #230f46;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Heather True Royal')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#536ba7" style="background-color: #536ba7;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/eVa9AGf4M8mL8YE17T" onclick="selectSize(this)">XS</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/eVa5kq8Go32r8YEaIu" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/14k14aaOw1YndeU3g3" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN2eV0f4M8mL0s89Es" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/7sIaEKg8QgTh3Ek4k9" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/bIY6ou3m4auTcaQ5oe" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/7sI28e4q8eL90s89Ev" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
         } if (productId === 'produit13 - Heather True Royal') {
             modalBody.innerHTML = `
                 <h2>Skate - T-Shirt (Heather True Royal)</h2>
@@ -3282,6 +2914,36 @@ function openProductPageProduct14Natural() {
 function openProductPageProduct14Lemon() {
     // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
     window.open('skate-ar00037.html', '_blank');
+}
+
+function openProductPageProduct13Black() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.location.href = 'skate-ar00028.html';
+}
+    
+function openProductPageProduct13Forest() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.location.href = 'skate-ar00027.html';
+}
+
+function openProductPageProduct13OxbloodBlack() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.location.href = 'skate-ar00029.html';
+}
+
+function openProductPageProduct13TeamPurple() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.location.href = 'skate-ar00030.html';
+}
+
+function openProductPageProduct13HeatherTrueRoyal() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.location.href = 'skate-ar00032.html';
+}
+
+function openProductPageProduct13Maroon() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.location.href = 'skate-ar00031.html';
 }
 </script>
 

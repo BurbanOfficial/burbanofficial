@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burban Skate - Maroon</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=bevellier@700,500,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers le fichier CSS -->
+    <script src="script.js" defer></script> <!-- Lien vers le fichier JavaScript -->
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/uR1AoK9.png">
+    <!-- Favicon pour les navigateurs modernes -->
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" sizes="16x16" />
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" sizes="32x32" />
+    <link rel="icon" href="https://i.imgur.com/uR1AoK9.png" sizes="48x48" />
+</head>
+<body>
+
+<button id="closeButton" onclick="closeWindow()"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;&nbsp;Return to the store</button>
+
+<div class="container">
+    <div class="left">
+        <div class="gallery">
+            <img class="main-photo" src="https://i.imgur.com/Dk81rN0.jpeg" alt="Main Photo">
+            <div class="thumbnail-container">
+                <img class="thumbnail" src="https://i.imgur.com/5Y2S7cE.jpeg" alt="Photo 1">
+                <img class="thumbnail" src="https://i.imgur.com/dhbowzC.jpeg" alt="Photo 2">
+                <img class="thumbnail" src="https://i.imgur.com/M7XLnxl.jpeg" alt="Photo 3">
+            </div>
+            <div class="thumbnail-container1">
+                <img class="thumbnail" src="https://i.imgur.com/hXILqmS.jpeg" alt="Photo 4">
+                <img class="thumbnail" src="https://i.imgur.com/Jt4zRfR.jpeg" alt="Photo 5">
+            </div>
+        </div>
+    </div>
+
+    <div id="carousel1" class="carousel">
+        <div class="carousel-images">
+          <img src="https://i.imgur.com/Dk81rN0.jpeg" alt="Image 1">
+          <img src="https://i.imgur.com/5Y2S7cE.jpeg" alt="Image 2">
+          <img src="https://i.imgur.com/dhbowzC.jpeg" alt="Image 3">
+          <img src="https://i.imgur.com/M7XLnxl.jpeg" alt="Image 4">
+          <img src="https://i.imgur.com/hXILqmS.jpeg" alt="Image 5">
+          <img src="https://i.imgur.com/Jt4zRfR.jpeg" alt="Image 6">
+        </div>
+        <div class="carousel-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+          <span class="dot" data-index="3"></span>
+          <span class="dot" data-index="4"></span>
+          <span class="dot" data-index="5"></span>
+        </div>
+    </div>
+      
+    <div class="right">
+        <h1><strong>Skate - T-Shirt (Maroon)</strong></h1>
+        <p class="price">€25,00</p>
+
+        <br><label for="color">Would you like to see another color?</label>
+        <div class="similar-articles">
+            <div class="similar-articles-container">
+                <div class="product-card2" onclick="openProductPageProduct13Forest()">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#223e25" style="background-color: #223e25;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openProductPageProduct13Black()">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#0c0c0c" style="background-color: #0c0c0c;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openProductPageProduct13OxbloodBlack()">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#2c1013" style="background-color: #2c1013;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openProductPageProduct13TeamPurple()">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#230f46" style="background-color: #230f46;"></div>
+                    </div>
+                </div>
+                <div class="product-card2" onclick="openProductPageProduct13HeatherTrueRoyal()">
+                    <div class="product-info">
+                        <div class="color-option" data-color="#536ba7" style="background-color: #536ba7;"></div>
+                    </div>
+                </div>
+                <!-- Ajoutez d'autres produits similaires ici -->
+            </div>
+        </div>
+
+        <br><label for="size">Select your size</label>
+        <div class="size-selection">
+            <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
+            <div class="size-option" data-link="https://buy.stripe.com/eVa9AGf4M8mL8YE17T" onclick="selectSize(this)">XS</div>
+            <div class="size-option" data-link="https://buy.stripe.com/eVa5kq8Go32r8YEaIu" onclick="selectSize(this)">S</div>
+            <div class="size-option" data-link="https://buy.stripe.com/14k14aaOw1YndeU3g3" onclick="selectSize(this)">M</div>
+            <div class="size-option" data-link="https://buy.stripe.com/cN2eV0f4M8mL0s89Es" onclick="selectSize(this)">L</div>
+            <div class="size-option" data-link="https://buy.stripe.com/7sIaEKg8QgTh3Ek4k9" onclick="selectSize(this)">XL</div>
+            <div class="size-option" data-link="https://buy.stripe.com/bIY6ou3m4auTcaQ5oe" onclick="selectSize(this)">2XL</div>
+            <div class="size-option" data-link="https://buy.stripe.com/7sI28e4q8eL90s89Ev" onclick="selectSize(this)">3XL</div>
+        </div>
+        <!-- Taille en rupture de stock exemple -->
+        <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
+        <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideTShirt1()">Size guide&nbsp;&nbsp;<i class="fa-solid fa-ruler"></i></button>
+        <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment&nbsp;&nbsp;<i class="fa-solid fa-credit-card"></i></button>
+        <p id="errorMessage" class="error-message">Please select a size.</p>
+
+        <div class="payment-carousel">
+            <div class="payment-list">
+                <img src="https://i.imgur.com/sb3suRq.png" alt="Card">
+                <img src="https://i.imgur.com/jryoqmV.png" alt="Apple Pay">
+                <img src="https://i.imgur.com/2h3gcxW.png" alt="Google Pay">
+                <img src="https://i.imgur.com/KH7uotH.png" alt="iDeal">
+                <img src="https://i.imgur.com/75oxo3K.png" alt="Revolut">
+                <img src="https://i.imgur.com/yMmP1GJ.png" alt="Klarna.">
+                <img src="https://i.imgur.com/4TqnhnQ.png" alt="Link">
+                <img src="https://i.imgur.com/RRkUHp9.jpeg" alt="EPS">
+                <img src="https://i.imgur.com/IAAtHmT.jpeg" alt="Blik">
+                <img src="https://i.imgur.com/X2vki8D.png" alt="Bancontact">
+                <!-- Ajoute d'autres icônes de paiement ici -->
+            </div>
+        </div>
+
+        <div class="free-shipping">
+            Free Shipping 📦
+            <br>Free returns within 30 days*
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-title" onclick="toggleAccordion('desc')">
+                    Description <span class="arrow"><i class="fas fa-chevron-up"></i></span>
+                </div>
+                <div class="accordion-content" id="desc">
+                    This high-quality maroon t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-title" onclick="toggleAccordion('comp')">
+                    Composition, Quality & Environmental Characteristics <span class="arrow"><i class="fas fa-chevron-up"></i></span>
+                </div>
+                <div class="accordion-content" id="comp">
+                    <li>100% organic cotton 🌿</li>
+                    <li>Contains 0% hazardous substances</li>
+                    <li>DTG Printing</li>
+                    <li>Country of origin: Mexico, Honduras, United States</li>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Overlay pour afficher la photo en grand -->
+<div id="overlay" class="overlay" style="display:none;">
+    <div class="overlay-content">
+        <img id="overlay-photo" src="" alt="Photo Agrandie">
+        <span class="close-overlay" onclick="closePhoto()">×</span>
+    </div>
+</div>
+
+<script>
+    function openSizeGuideTShirt1() {
+        window.open('size-guide-t-shirt-1.html', '_blank');
+    }
+</script>
+
+<script>
+    function openProductPageProduct13Black() {
+        // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+        window.location.href = 'skate-ar00028.html';
+    }
+    
+    function openProductPageProduct13Forest() {
+        // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+        window.location.href = 'skate-ar00027.html';
+    }
+
+    function openProductPageProduct13OxbloodBlack() {
+        // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+        window.location.href = 'skate-ar00029.html';
+    }
+
+    function openProductPageProduct13TeamPurple() {
+        // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+        window.location.href = 'skate-ar00030.html';
+    }
+
+    function openProductPageProduct13HeatherTrueRoyal() {
+        // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+        window.location.href = 'skate-ar00032.html';
+    }
+
+    function openProductPageProduct13Maroon() {
+        // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+        window.location.href = 'skate-ar00031.html';
+    }
+    </script>
+</body>
+</html>
