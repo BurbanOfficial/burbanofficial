@@ -2631,79 +2631,6 @@
                 <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
                 <p id="errorMessage" class="error-message">Please select a size.</p>
             `;
-        } if (productId === 'produit13 - Heather True Royal') {
-            modalBody.innerHTML = `
-                <h2>Skate - T-Shirt (Heather True Royal)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/K7cvjtk.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/dIG3gd4.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/04w7rur.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/h64uwdV.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/rgqrOe1.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/sbCtESm.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality heather true royal t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>DTG Printing</li>
-                            <li>Country of origin: Mexico, Honduras, United States</li>
-                        </ul>
-
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit13 - Forest')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#223e25" style="background-color: #223e25;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Black')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#0c0c0c" style="background-color: #0c0c0c;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Oxblood Black')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#2c1013" style="background-color: #2c1013;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Team Purple')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#230f46" style="background-color: #230f46;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit13 - Maroon')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#721d37" style="background-color: #721d37;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 25,00€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/eVa28ebSAdH52AgdUM" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/28o14a09SdH55Msg2V" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/00gbIO09S32r4IoaIC" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/fZe28e9Ks6eD6Qw8Av" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/3csdQW4q8cD1caQbMI" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/4gwcMScWEbyX1wcbMJ" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit6()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
             }
         
             modal.style.display = "block";
@@ -2918,32 +2845,32 @@ function openProductPageProduct14Lemon() {
 
 function openProductPageProduct13Black() {
     // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
-    window.location.href = 'skate-ar00028.html';
+    window.open('skate-ar00028.html', '_blank');
 }
     
 function openProductPageProduct13Forest() {
     // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
-    window.location.href = 'skate-ar00027.html';
+    window.open('skate-ar00027.html', '_blank');
 }
 
 function openProductPageProduct13OxbloodBlack() {
     // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
-    window.location.href = 'skate-ar00029.html';
+    window.open('skate-ar00029.html', '_blank');
 }
 
 function openProductPageProduct13TeamPurple() {
     // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
-    window.location.href = 'skate-ar00030.html';
+    window.open('skate-ar00030.html', '_blank');
 }
 
 function openProductPageProduct13HeatherTrueRoyal() {
     // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
-    window.location.href = 'skate-ar00032.html';
+    window.open('skate-ar00032.html', '_blank');
 }
 
 function openProductPageProduct13Maroon() {
     // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
-    window.location.href = 'skate-ar00031.html';
+    window.open('skate-ar00031.html', '_blank');
 }
 </script>
 
