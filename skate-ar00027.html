@@ -20,9 +20,7 @@
 </head>
 <body>
 
-    <button onclick="vibratePhone()">Cliquez-moi</button>
-
-<button id="closeButton" onclick="closeWindow()" onclick="vibratePhone()"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;&nbsp;Return to the store</button>
+<button id="closeButton" onclick="closeWindow()"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;&nbsp;Return to the store</button>
 
 <div class="container">
     <div class="left">
@@ -107,8 +105,8 @@
         </div>
         <!-- Taille en rupture de stock exemple -->
         <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-        <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideTShirt1()" onclick="vibratePhone()">Size guide&nbsp;&nbsp;<i class="fa-solid fa-ruler"></i></button>
-        <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()" onclick="vibratePhone()">Proceed to payment&nbsp;&nbsp;<i class="fa-solid fa-credit-card"></i></button>
+        <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideTShirt1()">Size guide&nbsp;&nbsp;<i class="fa-solid fa-ruler"></i></button>
+        <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment&nbsp;&nbsp;<i class="fa-solid fa-credit-card"></i></button>
         <p id="errorMessage" class="error-message">Please select a size.</p>
 
         <div class="payment-carousel">
@@ -200,14 +198,6 @@
         // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
         window.location.href = 'skate-ar00031.html';
     }
-    </script>
-
-    <script>
-        function vibratePhone() {
-            if ("vibrate" in navigator) {
-                navigator.vibrate(50); // Fait vibrer le téléphone pendant 50ms
-            }
-        }
     </script>
 </body>
 </html>
