@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Guide</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=bevellier@700,500,400&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imgur.com/CCC34mn.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/CCC34mn.png">
+    <!-- Favicon pour les navigateurs modernes -->
+    <link rel="icon" href="https://i.imgur.com/CCC34mn.png" sizes="16x16" />
+    <link rel="icon" href="https://i.imgur.com/CCC34mn.png" sizes="32x32" />
+    <link rel="icon" href="https://i.imgur.com/CCC34mn.png" sizes="48x48" />
+    <style>
+        /* Styles du guide des tailles */
+        .size-guide-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: bevellier, sans-serif;
+        }
+
+        .size-guide-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .size-guide-image {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .size-guide-text {
+            max-width: 600px;
+        }
+
+        .size-guide-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .size-guide-table th,
+        .size-guide-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .size-guide-table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        .size-guide-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .size-guide-info {
+            font-family: bevellier, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .size-guide-info p {
+            margin: 0;
+            text-align: center; /* Centrer l'image horizontalement */
+        }
+
+        .image-container {
+            text-align: center; /* Centrer l'image horizontalement */
+            margin-bottom: 20px; /* Espacement entre l'image et le tableau */
+        }
+
+        .centered-image {
+            width: 100%; /* Ajuste la taille de l'image à la largeur du conteneur */
+            max-width: 600px; /* Définit une largeur maximale pour l'image */
+            height: auto; /* Conserve les proportions de l'image */
+        }
+
+        .size-guide-text-explanations {
+            text-align: left;
+            background-color: #d1e7f8;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .unit-switch {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .unit-switch button {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .unit-switch button.selected {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="size-guide-container">
+        <!-- Image et texte explicatif -->
+        <div class="size-guide-header">
+            <img src="https://i.imgur.com/1KGcrXV.png" alt="Guide des tailles" class="size-guide-image">
+            <div class="size-guide-text">
+                <p>Discover our size guide to choose the perfect fit for you. <br>If you have any doubts, feel free to refer to our chart below!</p>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://i.imgur.com/FkJRxlw.jpeg" alt="Image au-dessus du tableau" class="centered-image">
+            <div class="size-guide-text-explanations">
+                <p><strong>A - Length</strong><br><br>Place one end of the measuring tape at the
+                    collar (at the highest point of the shoulder).
+                    <br>Stretch the tape down to the bottom of the garment.</p>
+
+                <p><strong>B - Chest</strong><br><br>Measure around the widest part of your chest.
+                    <br>Keep the measuring tape horizontal.</p>
+            </div>
+        </div>
+
+        <div class="unit-switch">
+            <button id="btn-cm" class="selected">Centimeters</button>
+            <button id="btn-inch">Inches</button>
+        </div>
+
+        <!-- Tableau des tailles en centimètres -->
+        <table id="table-cm" class="size-guide-table">
+            <thead>
+                <tr>
+                    <th>Size</th>
+                    <th>Length (cm)</th>
+                    <th>Chest (cm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>S</td>
+                    <td>68.6</td>
+                    <td>96.5-104</td>
+                </tr>
+                <tr>
+                    <td>M</td>
+                    <td>71</td>
+                    <td>106.7-114.3</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>73.7</td>
+                    <td>116.8-124.5</td>
+                </tr>
+                <tr>
+                    <td>XL</td>
+                    <td>76.2</td>
+                    <td>127-134.6</td>
+                </tr>
+                <tr>
+                    <td>2XL</td>
+                    <td>78.7</td>
+                    <td>137.2-144.8</td>
+                </tr>
+                <tr>
+                    <td>3XL</td>
+                    <td>81.3</td>
+                    <td>147.3-157.5</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Tableau des tailles en inches -->
+        <table id="table-inch" class="size-guide-table hidden">
+            <thead>
+                <tr>
+                    <th>Size</th>
+                    <th>Length (in)</th>
+                    <th>Chest (in)</th>
+                </tr>
+            </thead>
+                <tr>
+                    <td>S</td>
+                    <td>27</td>
+                    <td>38-41</td>
+                </tr>
+                <tr>
+                    <td>M</td>
+                    <td>28</td>
+                    <td>42-45</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>29</td>
+                    <td>46-49</td>
+                </tr>
+                <tr>
+                    <td>XL</td>
+                    <td>30</td>
+                    <td>50-53</td>
+                </tr>
+                <tr>
+                    <td>2XL</td>
+                    <td>31</td>
+                    <td>54-57</td>
+                </tr>
+                <tr>
+                    <td>3XL</td>
+                    <td>32</td>
+                    <td>58-62</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+        <!-- Encadré d'informations sous le tableau -->
+        <div class="size-guide-info">
+            <p><strong>Tips:</strong> If you're between two sizes, we recommend choosing the larger size for better comfort.<br><strong>Product sizes may vary by up to 5 cm/2 inches.</strong></p>
+        </div>
+    </div>
+
+        <div style="font-size: 14px; font-family: bevelier, sans-serif;">
+            <strong>&copy; 2024 - <span id="year"></span> Burban. All Rights Reserved.</strong>
+        </div>
+
+<script>
+    // Mise à jour automatique de l'année
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<script>
+    const btnCm = document.getElementById('btn-cm');
+    const btnInch = document.getElementById('btn-inch');
+    const tableCm = document.getElementById('table-cm');
+    const tableInch = document.getElementById('table-inch');
+
+    btnCm.addEventListener('click', () => {
+        tableCm.classList.remove('hidden');
+        tableInch.classList.add('hidden');
+        btnCm.classList.add('selected');
+        btnInch.classList.remove('selected');
+    });
+
+    btnInch.addEventListener('click', () => {
+        tableInch.classList.remove('hidden');
+        tableCm.classList.add('hidden');
+        btnInch.classList.add('selected');
+        btnCm.classList.remove('selected');
+    });
+</script>
+
+</body>
+</html>
