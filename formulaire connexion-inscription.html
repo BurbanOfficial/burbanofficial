@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Burban - Customer Area</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Votre CSS personnalisé -->
+  <link rel="stylesheet" href="style-customer-area.css">
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <!-- Conteneur de notification -->
+  <div id="notification" class="notification"></div>
+
+  <div class="container my-5">
+    <!-- Section Inscription / Connexion -->
+    <div id="auth-section">
+      <ul class="nav nav-tabs" id="authTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab">Registration</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="authTabContent">
+        <!-- Formulaire de Connexion -->
+        <div class="tab-pane fade show active" id="login" role="tabpanel">
+          <form id="login-form" class="mt-3">
+            <div class="form-group">
+              <label for="login-email">Email address *</label>
+              <input type="email" class="form-control" id="login-email" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password *</label>
+              <input type="password" class="form-control" id="login-password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Log in</button>
+            <a href="#" id="forgot-password" class="float-right mt-2">Forgot password?</a>
+          </form>
+        </div>
+        <!-- Formulaire d'Inscription -->
+        <div class="tab-pane fade" id="register" role="tabpanel">
+          <form id="register-form" class="mt-3">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="reg-firstname">Firstname *</label>
+                <input type="text" class="form-control" id="reg-firstname" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="reg-lastname">Name *</label>
+                <input type="text" class="form-control" id="reg-lastname" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reg-email">Email address *</label>
+              <input type="email" class="form-control" id="reg-email" required>
+            </div>
+            <div class="form-group">
+              <label for="reg-password">Password *</label>
+              <input type="password" class="form-control" id="reg-password" required>
+            </div>
+            <div class="form-row align-items-end">
+              <div class="form-group col-md-4">
+                <label for="reg-country">Country</label>
+                <select id="reg-country" class="form-control">
+                  <option value="+93">Afghanistan (+93)</option>
+                  <option value="+355">Albania (+355)</option>
+                  <option value="+213">Algeria (+213)</option>
+                  <option value="+1684">American Samoa (+1684)</option>
+                  <option value="+376">Andorra (+376)</option>
+                  <option value="+244">Angola (+244)</option>
+                  <option value="+1264">Anguilla (+1264)</option>
+                  <option value="+672">Antarctica (+672)</option>
+                  <option value="+1268">Antigua and Barbuda (+1268)</option>
+                  <option value="+54">Argentina (+54)</option>
+                  <option value="+374">Armenia (+374)</option>
+                  <option value="+297">Aruba (+297)</option>
+                  <option value="+61">Australia (+61)</option>
+                  <option value="+43">Austria (+43)</option>
+                  <option value="+994">Azerbaijan (+994)</option>
+                  <option value="+1242">Bahamas (+1242)</option>
+                  <option value="+973">Bahrain (+973)</option>
+                  <option value="+880">Bangladesh (+880)</option>
+                  <option value="+1246">Barbados (+1246)</option>
+                  <option value="+375">Belarus (+375)</option>
+                  <option value="+32">Belgium (+32)</option>
+                  <option value="+501">Belize (+501)</option>
+                  <option value="+229">Benin (+229)</option>
+                  <option value="+1441">Bermuda (+1441)</option>
+                  <option value="+975">Bhutan (+975)</option>
+                  <option value="+591">Bolivia (+591)</option>
+                  <option value="+599">Caribbean Netherlands (+599)</option>
+                  <option value="+387">Bosnia and Herzegovina (+387)</option>
+                  <option value="+267">Botswana (+267)</option>
+                  <option value="+55">Brazil (+55)</option>
+                  <option value="+246">British Indian Ocean Territory (+246)</option>
+                  <option value="+673">Brunei (+673)</option>
+                  <option value="+359">Bulgaria (+359)</option>
+                  <option value="+226">Burkina Faso (+226)</option>
+                  <option value="+257">Burundi (+257)</option>
+                  <option value="+855">Cambodia (+855)</option>
+                  <option value="+237">Cameroon (+237)</option>
+                  <option value="+1">Canada (+1)</option>
+                  <option value="+238">Cape Verde (+238)</option>
+                  <option value="+1345">Cayman Islands (+1345)</option>
+                  <option value="+236">Central African Republic (+236)</option>
+                  <option value="+235">Chad (+235)</option>
+                  <option value="+56">Chile (+56)</option>
+                  <option value="+86">China (+86)</option>
+                  <option value="+61">Christmas Island (+61)</option>
+                  <option value="+57">Colombia (+57)</option>
+                  <option value="+269">Comoros (+269)</option>
+                  <option value="+242">Republic of the Congo (+242)</option>
+                  <option value="+243">Democratic Republic of the Congo (+243)</option>
+                  <option value="+682">Cook Islands (+682)</option>
+                  <option value="+506">Costa Rica (+506)</option>
+                  <option value="+385">Croatia (+385)</option>
+                  <option value="+53">Cuba (+53)</option>
+                  <option value="+357">Cyprus (+357)</option>
+                  <option value="+420">Czech Republic (+420)</option>
+                  <option value="+45">Denmark (+45)</option>
+                  <option value="+253">Djibouti (+253)</option>
+                  <option value="+1767">Dominica (+1767)</option>
+                  <option value="+1">Dominican Republic (+1)</option>
+                  <option value="+593">Ecuador (+593)</option>
+                  <option value="+20">Egypt (+20)</option>
+                  <option value="+503">El Salvador (+503)</option>
+                  <option value="+240">Equatorial Guinea (+240)</option>
+                  <option value="+291">Eritrea (+291)</option>
+                  <option value="+372">Estonia (+372)</option>
+                  <option value="+251">Ethiopia (+251)</option>
+                  <option value="+500">Falkland Islands (+500)</option>
+                  <option value="+298">Faroe Islands (+298)</option>
+                  <option value="+679">Fiji (+679)</option>
+                  <option value="+358">Finland (+358)</option>
+                  <option value="+33">France (+33)</option>
+                  <option value="+995">Georgia (+995)</option>
+                  <option value="+49">Germany (+49)</option>
+                  <option value="+30">Greece (+30)</option>
+                  <option value="+852">Hong Kong (+852)</option>
+                  <option value="+36">Hungary (+36)</option>
+                  <option value="+91">India (+91)</option>
+                  <option value="+62">Indonesia (+62)</option>
+                  <option value="+39">Italy (+39)</option>
+                  <option value="+81">Japan (+81)</option>
+                  <option value="+52">Mexico (+52)</option>
+                  <option value="+31">Netherlands (+31)</option>
+                  <option value="+64">New Zealand (+64)</option>
+                  <option value="+48">Poland (+48)</option>
+                  <option value="+351">Portugal (+351)</option>
+                  <option value="+7">Russia (+7)</option>
+                  <option value="+34">Spain (+34)</option>
+                  <option value="+46">Sweden (+46)</option>
+                  <option value="+41">Switzerland (+41)</option>
+                  <option value="+90">Turkey (+90)</option>
+                  <option value="+44">United Kingdom (+44)</option>
+                  <option value="+1">United States (+1)</option>
+                  <option value="+84">Vietnam (+84)</option>
+                </select>
+              </div>
+              <div class="form-group col-md-8">
+                <label for="reg-phone">Phone number (optional)</label>
+                <input type="tel" class="form-control" id="reg-phone" placeholder="Ex: +33 6 12 34 56 78">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reg-birthday">Date of birth (optional)<br>
+                <small class="text-muted">This date is used to celebrate your birthday!</small>
+              </label>
+              <input type="date" class="form-control" id="reg-birthday">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="reg-newsletter">
+              <label class="form-check-label" for="reg-newsletter">
+                I wish to subscribe to the Burban newsletter.
+              </label>
+            </div>
+            <button type="submit" class="btn btn-success">Sign up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Espace Client -->
+    <div id="client-section" style="display: none;">
+      <h2>Welcome <span id="user-firstname-display"></span> !</h2>
+      <ul class="nav nav-tabs" id="clientTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab">Password</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="emailpref-tab" data-toggle="tab" href="#emailpref" role="tab">Email Preferences</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" id="favorites-tab" data-toggle="tab" href="#favorites" role="tab">
+            Favorites <span id="fav-count" class="badge badge-info"></span>
+          </a>
+        </li> -->
+      </ul>
+      <div class="tab-content mt-3" id="clientTabContent">
+        <!-- Section Profil -->
+        <div class="tab-pane fade show active" id="profile" role="tabpanel">
+          <form id="profile-form">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="profile-firstname">Firstname</label>
+                <input type="text" class="form-control" id="profile-firstname">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="profile-lastname">Name</label>
+                <input type="text" class="form-control" id="profile-lastname">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="profile-email">Email</label>
+              <input type="email" class="form-control" id="profile-email">
+            </div>
+            <div class="form-group">
+              <label for="profile-birthday">Date of birth</label>
+              <input type="date" class="form-control" id="profile-birthday" disabled>
+              <small class="form-text text-danger">
+                To modify your date of birth, please contact customer service at 
+                <a href="mailto:burban.assistance@outlook.com">burban.assistance@outlook.com</a>.
+                <br>If you wish to permanently delete your customer account, please contact customer service.
+              </small>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+          </form>
+        </div>
+        <!-- Section Mot de passe -->
+        <div class="tab-pane fade" id="password" role="tabpanel">
+          <form id="password-form" class="form-inline">
+            <div class="form-group mb-2">
+              <label for="new-password" class="sr-only">New password</label>
+              <input type="password" class="form-control" id="new-password" placeholder="New password" required>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="confirm-password" class="sr-only">Confirm</label>
+              <input type="password" class="form-control" id="confirm-password" placeholder="Confirm" required>
+            </div>
+            <button type="submit" class="btn btn-secondary mb-2">Refresh</button>
+          </form>
+        </div>
+        <!-- Section Préférences E-mail -->
+        <div class="tab-pane fade" id="emailpref" role="tabpanel">
+          <p>You can unsubscribe from the newsletter by simply clicking the unsubscribe button at the bottom of each email we send.</p>
+        </div>
+        <!-- Section Favoris -->
+        <div class="tab-pane fade" id="favorites" role="tabpanel">
+          <h4>Your favorite items.</h4>
+          <ul class="list-group" id="favorites-list">
+            <!-- Favorites will be loaded here -->
+          </ul>
+        </div>
+      </div>
+      <button id="logout-btn" class="btn btn-danger mt-3">Log out</button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS, Popper.js et jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Votre script personnalisé -->
+  <script src="script-customer-area.js"></script>
+</body>
+</html>
