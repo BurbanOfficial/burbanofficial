@@ -517,7 +517,7 @@ footer {
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .formulaire-connexion-inscription {
         width: 100%; /* S'adapte à la largeur de son conteneur */
-        height: 200vh; /* 54% de la hauteur de la fenêtre visible */
+        height: 300vh; /* 54% de la hauteur de la fenêtre visible */
         border: none; /* Supprime les bordures */
     }
 }
