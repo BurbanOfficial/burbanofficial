@@ -28,7 +28,7 @@ const profileForm = document.getElementById('profile-form');
 const passwordForm = document.getElementById('password-form');
 const logoutBtn = document.getElementById('logout-btn');
 
-/* Fonction pour afficher une notification personnalisée */
+// Fonction pour afficher une notification personnalisée
 function showNotification(title, message, duration = 4000) {
   notificationEl.innerHTML = `<h4>${title}</h4><p>${message}</p>`;
   notificationEl.style.display = 'block';
@@ -57,7 +57,7 @@ registerForm.addEventListener('submit', (e) => {
       cred.user.sendEmailVerification().then(() => {
         showNotification("Confirmation email sent", "Please check your inbox and verify your email to access your account.");
       });
-      // Stocker les données complémentaires dans Firestore
+      // Stocker les données complémentaires dans Firestore, en créant les champs favorites et points
       return db.collection('users').doc(cred.user.uid).set({
         firstname,
         lastname,
@@ -65,7 +65,8 @@ registerForm.addEventListener('submit', (e) => {
         phone: phone ? (country + phone) : "",
         birthday: birthday || "",
         newsletter,
-        favorites: []
+        favorites: [],  // Création du tableau favoris vide
+        points: 0       // Initialisation des points de fidélité à 0
       });
     })
     .then(() => {
@@ -118,7 +119,6 @@ document.getElementById('forgot-password').addEventListener('click', (e) => {
 auth.onAuthStateChanged(user => {
   if (user) {
     if (!user.emailVerified) {
-      // Si l'email n'est pas vérifié, on affiche la notification et on déconnecte
       showNotification("Email not verified", "Please verify your email to access your account.");
       auth.signOut();
       return;
@@ -128,6 +128,7 @@ auth.onAuthStateChanged(user => {
     clientSection.style.display = 'block';
     loadUserProfile(user);
     loadUserFavorites(user);
+    loadUserAdvantages(user); // Mise à jour de la barre de progression et des coins
   } else {
     authSection.style.display = 'block';
     clientSection.style.display = 'none';
@@ -227,3 +228,44 @@ function loadUserFavorites(user) {
 logoutBtn.addEventListener('click', () => {
   auth.signOut();
 });
+
+// Fonction pour ajouter un favori à l'utilisateur connecté
+function addFavorite(article) {
+  const user = auth.currentUser;
+  if (!user) {
+    showNotification("Erreur", "Vous devez être connecté pour ajouter un favori.", 6000);
+    return;
+  }
+  db.collection('users').doc(user.uid).update({
+    favorites: firebase.firestore.FieldValue.arrayUnion(article)
+  })
+  .then(() => {
+    showNotification("Favori ajouté", "L'article a été ajouté à vos favoris.");
+    loadUserFavorites(user); // Recharge la liste après mise à jour
+  })
+  .catch(err => {
+    console.error(err);
+    showNotification("Erreur", err.message, 6000);
+  });
+}
+
+/// 12. Chargement et affichage des avantages (points de fidélité)
+function loadUserAdvantages(user) {
+  db.collection('users').doc(user.uid).get()
+    .then(doc => {
+      if (doc.exists) {
+        const data = doc.data();
+        const points = data.points || 0;
+        // Calcul du pourcentage de progression en fonction d'un maximum de 2500 points
+        let percent = (points / 2800) * 100;
+        if (percent > 100) percent = 100;
+        document.getElementById('points-progress').style.width = percent + '%';
+        // Affichage du nombre de coins
+        const coinsDisplay = document.getElementById('coins-display');
+        if (coinsDisplay) {
+          coinsDisplay.textContent = points + " Coins";
+        }
+      }
+    })
+    .catch(err => console.error(err));
+}

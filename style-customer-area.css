@@ -256,3 +256,68 @@ form select:focus {
   margin: 0;
   color: var(--text-color);
 }
+
+/* Styles pour la section Mes avantages Burban */
+.coins-display {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #90bed6;
+  text-align: center;
+}
+
+/* Conteneur de la barre de progression */
+.progress-container {
+  position: relative;
+  margin-top: 1rem;
+  padding-bottom: 20px; /* Pour laisser de la place aux étiquettes */
+}
+
+/* Barre de progression en arrière-plan */
+.progress {
+  position: relative;
+  height: 14px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Partie remplie de la barre */
+.progress-bar {
+  height: 100%;
+  background-color: #90bed6;
+  transition: width 0.5s ease;
+}
+
+/* Marqueurs (donut circles) positionnés juste au-dessus de la barre */
+.progress-marker {
+  position: absolute;
+  top: -5px;  /* Place le marqueur au-dessus de la ligne */
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 3px solid #90bed6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Positionnement des marqueurs en fonction des paliers */
+/* 500 pts (5€) -> 500/2500 = 20% */
+.marker-500 { left: 19%; }
+/* 1000 pts (10€) -> 40% */
+.marker-1000 { left: 37%; }
+/* 2000 pts (20€) -> 80% */
+.marker-2000 { left: 70%; }
+/* 2500 pts (30€) -> 100% */
+.marker-2500 { left: 90.5%; }
+
+/* Étiquettes sous la barre pour indiquer les paliers */
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #333;
+}
