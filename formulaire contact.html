@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Burban</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
+  <style>
+    /* Style global et container */
+    body {
+      font-family: 'satoshi', sans-serif;
+      background: transparent;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      width: 500px;
+      position: relative;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+      font-weight: 600;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #555;
+    }
+    .required {
+      color: red;
+      margin-left: 2px;
+    }
+    input[type="email"],
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+    input[type="email"]:focus,
+    input[type="text"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #000000;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    }
+    /* Fixe la taille du textarea et affiche une barre de défilement verticale */
+    textarea {
+      height: 150px;
+      resize: none;
+      overflow-y: auto;
+    }
+    
+    label, textarea {
+      font-family: 'satoshi', sans-serif;
+    }
+
+    .hidden {
+      display: none;
+    }
+    
+    /* Message d'erreur */
+    .error-message {
+      color: #d9534f;
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    /* Message de confirmation animé */
+    .confirmation {
+      text-align: center;
+      color: #4CAF50;
+      margin-top: 20px;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    
+    /* Bouton de soumission personnalisé */
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: #000000; /* fond noir */
+      color: #fff; /* texte blanc */
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden; /* cache l'élément animé hors du bouton */
+      transition: background 0.3s;
+    }
+    /* Le texte du bouton avec transition de couleur */
+    button[type="submit"] .btn-text {
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s;
+    }
+    /* Changement de couleur du texte selon l'état */
+    button[type="submit"].hover-in .btn-text {
+      color: #000;
+    }
+    button[type="submit"].hover-out .btn-text {
+      color: #fff;
+    }
+    
+    /* L'élément qui assure l'effet de survol */
+    button[type="submit"] .hover-effect {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff; /* fond en survol */
+      z-index: 0;
+      border: 1px solid #000; /* bordure noire */
+      border-radius: 6px;
+      box-sizing: border-box;
+      transform: translateY(100%);
+    }
+    /* Animation lors du survol */
+    button[type="submit"].hover-in .hover-effect {
+      animation: slideIn 0.3s forwards;
+    }
+    /* Animation lorsque le curseur quitte le bouton */
+    button[type="submit"].hover-out .hover-effect {
+      animation: slideOut 0.3s forwards;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(100%); }
+      to   { transform: translateY(0); }
+    }
+    @keyframes slideOut {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Got a problem or a question?<br>We're here to help!</h2>
+    <!-- Le formulaire envoie les données vers Formspree -->
+    <form id="contactForm" action="https://formspree.io/f/mkgobldr" method="POST">
+      <!-- Honeypot anti-spam (champ caché) -->
+      <div class="hidden">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" placeholder="Ne pas remplir">
+      </div>
+      
+      <!-- Adresse Email -->
+      <label for="email">Email Address<span class="required">*</span></label>
+      <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+      
+      <!-- Objet avec menu déroulant -->
+      <label for="subject">Subject<span class="required">*</span></label>
+      <select id="subject" name="subject" required>
+        <option value="">-- Select a subject --</option>
+        <option value="commande">Order tracking</option>
+        <option value="retour">Return/refund request</option>
+        <option value="taille">Question about sizes</option>
+        <option value="produit">Product information request</option>
+        <option value="support">Technical support</option>
+        <option value="devis">Quote request (bulk order)</option>
+        <option value="collaboration">Collaboration/Partnership</option>
+        <option value="autre">Other</option>
+      </select>
+      
+      <!-- Objet personnalisé (apparait si "Autre" est sélectionné) -->
+      <div id="customSubjectContainer" class="hidden">
+        <label for="customSubject">Custom Subject<span class="required">*</span></label>
+        <input type="text" id="customSubject" name="customSubject" placeholder="Saisissez votre objet">
+      </div>
+      
+      <!-- Message -->
+      <label for="message">Message<span class="required">*</span></label>
+      <textarea id="message" name="message" placeholder="Your message" required></textarea>
+      
+      <!-- Bouton Envoyer avec effet survol -->
+      <button type="submit">
+        <span class="btn-text">Send</span>
+        <span class="hover-effect"></span>
+      </button>
+    </form>
+    <div id="error" class="error-message hidden"></div>
+    <div id="confirmation" class="confirmation hidden">
+      Thank you! Your message has been successfully received.
+    </div>
+  </div>
+  
+  <script>
+    /***** Gestion du champ "Objet personnalisé" *****/
+    const subjectSelect = document.getElementById('subject');
+    const customSubjectContainer = document.getElementById('customSubjectContainer');
+    subjectSelect.addEventListener('change', function() {
+      if (this.value === 'autre') {
+        customSubjectContainer.classList.remove('hidden');
+        document.getElementById('customSubject').required = true;
+      } else {
+        customSubjectContainer.classList.add('hidden');
+        document.getElementById('customSubject').required = false;
+      }
+    });
+    
+    /***** Gestion de la soumission du formulaire vers Formspree *****/
+    const contactForm = document.getElementById('contactForm');
+    const submitButton = document.querySelector('button[type="submit"]');
+    const errorDiv = document.getElementById('error');
+    const confirmationDiv = document.getElementById('confirmation');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Vérification honeypot
+      const honeypot = document.getElementById('website').value;
+      if (honeypot !== "") {
+        // Si le champ caché est rempli, on arrête le traitement
+        return;
+      }
+      
+      // Réinitialise les messages d'erreur et de confirmation
+      errorDiv.classList.add('hidden');
+      errorDiv.textContent = "";
+      confirmationDiv.classList.add('hidden');
+      
+      // Désactivation du bouton et affichage d'un indicateur de chargement
+      submitButton.disabled = true;
+      const originalText = submitButton.querySelector('.btn-text').textContent;
+      submitButton.querySelector('.btn-text').textContent = "Send...";
+      
+      const formData = new FormData(contactForm);
+      
+      // Si l'utilisateur a choisi "Autre", on remplace la valeur de l'objet
+      if(subjectSelect.value === 'autre') {
+        formData.set('subject', document.getElementById('customSubject').value);
+      }
+      
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if(response.ok) {
+          confirmationDiv.classList.remove('hidden');
+          // Animation de confirmation via CSS (fadeIn)
+          contactForm.reset();
+          customSubjectContainer.classList.add('hidden');
+        } else {
+          return response.json().then(data => {
+            throw new Error(data.errors ? data.errors.map(error => error.message).join(", ") : "An error occurred while sending. Please try again.");
+          });
+        }
+      })
+      .catch(error => {
+        errorDiv.textContent = error.message;
+        errorDiv.classList.remove('hidden');
+      })
+      .finally(() => {
+        submitButton.disabled = false;
+        submitButton.querySelector('.btn-text').textContent = originalText;
+      });
+    });
+    
+    /***** Gestion de l'effet de survol sur le bouton *****/
+    submitButton.addEventListener('mouseenter', function() {
+      // Lance l'animation d'entrée
+      this.classList.remove('hover-out');
+      this.classList.add('hover-in');
+    });
+    
+    submitButton.addEventListener('mouseleave', function() {
+      // Lance l'animation de sortie
+      this.classList.remove('hover-in');
+      this.classList.add('hover-out');
+    });
+    
+    // Au terme de l'animation de sortie, on retire la classe pour préparer la prochaine interaction
+    submitButton.addEventListener('animationend', function(e) {
+      if (e.animationName === 'slideOut') {
+        this.classList.remove('hover-out');
+      }
+    });
+  </script>
+</body>
+</html>

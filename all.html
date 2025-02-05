@@ -846,23 +846,13 @@
         </div>
     </div>
 
-    <div class="product-card" data-category="sweat" data-color="rose" data-price="46.99" onmouseover="showImage(this, 'https://i.imgur.com/dqRKQw6.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/Pz6ghck.jpeg')" onclick="openModal('produit1')">
-        <img src="https://i.imgur.com/Pz6ghck.jpeg" alt="Produit 1" class="product-image">
-        <div class="product-info">
-            <h3 class="product-title">P!nk Panther</h3>
-            <h6 class="product-categorie">Hoodie</h6>
-            <p class="product-price">46,99€</p>
-            <button class="view-product-button" onclick="openModal('produit1'); event.stopPropagation();">Discover</button>
-        </div>
-    </div>
-
-    <div class="product-card" data-category="sweat" data-color="noir vert" data-price="62.99" onmouseover="showImage(this, 'https://i.imgur.com/LV91a36.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/5Ya85o8.jpeg')" onclick="openModal('produit2')">
+    <div class="product-card" data-category="sweat" data-color="noir vert" data-price="62.99" onmouseover="showImage(this, 'https://i.imgur.com/LV91a36.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/5Ya85o8.jpeg')" onclick="openProductPageProduct2()">
         <img src="https://i.imgur.com/5Ya85o8.jpeg" alt="Produit 2" class="product-image">
         <div class="product-info">
             <h3 class="product-title">Emerald</h3>
             <h6 class="product-categorie">Hoodie</h6>
             <p class="product-price">62,99€</p>
-            <button class="view-product-button" onclick="openModal('produit2'); event.stopPropagation();">Discover</button>
+            <button class="view-product-button" onclick="openProductPageProduct2(); event.stopPropagation();">Discover</button>
         </div>
     </div>
 
@@ -932,7 +922,7 @@
         </div>
     </div>
 
-    <div class="product-card" data-category="t-shirt" data-color="lavande rose blanc pêche" data-price="32.99" onmouseover="showImage(this, 'https://i.imgur.com/ue0Yr4m.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/16SdjUd.jpeg')" onclick="openModal('produit7 - Lavender')">
+    <div class="product-card" data-category="t-shirt" data-color="lavande rose blanc pêche" data-price="32.99" onmouseover="showImage(this, 'https://i.imgur.com/ue0Yr4m.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/16SdjUd.jpeg')" onclick="openProductPageProduct7Lavender()">
         <!-- Étiquette respectueuse de l'environnement -->
         <div class="eco-label">
             <span class="eco-icon">🌱</span>
@@ -953,7 +943,7 @@
                 <div class="color-circle" style="background-color: #fff;"></div>
             </div>
             <p class="product-price">32,99€</p>
-            <button class="view-product-button" onclick="openModal('produit7 - Lavender'); event.stopPropagation();">Discover</button>
+            <button class="view-product-button" onclick="openProductPageProduct7Lavender(); event.stopPropagation();">Discover</button>
         </div>
     </div>
 </div>
@@ -995,89 +985,7 @@
     // Faire défiler la page vers le haut
     window.scrollTo(0, 0);
 
-        if (productId === 'produit1') {
-            modalBody.innerHTML = `
-                <h2>P!nk Panther - Hoodie</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/dqRKQw6.jpeg" alt="Image 1" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Pz6ghck.jpeg" alt="Image 1" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/sWbrFOz.jpeg" alt="Image 1" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/GiVMeKU.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/dX3Upc6.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/7dTemGS.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/kSqMxcS.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/I2evoua.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/wYofTeG.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/doqDxnb.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/B9osqoI.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p><em>Pink Panther</em> is a soft, stylish, and comfortable hoodie that’s sure to be a crowd favorite. 
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                    <ul>
-                        <li>50% pre-shrunk cotton, 50% polyester</li>
-                        <li>Double-lined hood with matching drawstring</li>
-                        <li>Collar, shoulders, armholes, cuffs, and hem stitched with double stitching</li>
-                        <li>Contains 0% hazardous substances</li>
-                        <li>Country of origin: Bangladesh, Nicaragua, Honduras, El Salvador</li>
-                    </ul>
-
-                <br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 46,99€</strong></p>
-
-                <div class="size-selection">
-                    <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div>
-                    <!-- <div class="size-option" data-link="https://buy.stripe.com/14k14a3m4byXcaQcOb" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/28odQW7Ck7iHb6MdSg" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN26ouf4MbyX0s8eWl" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN214a8Go5azb6M8xY" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/00gcMS4q832r5MsdSj" onclick="selectSize(this)">2XL</div> -->
-                </div>
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit1()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-            } if (productId === 'produit2') {
-            modalBody.innerHTML = `
-                <h2>Emerald - Hoodie</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/LV91a36.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/5Ya85o8.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/m8KG0WT.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/JWt0xVm.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/pB50o1O.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/UWSSWWE.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/MquzWNf.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/ZTF5wLB.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/twJ5Ggb.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>Classic unisex premium quality hoodie with a front pocket and matching flat drawstrings. The exterior is made of 100% cotton, making this hoodie soft to the touch.    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                    <ul>
-                        <li>65% cotton, 35% polyester</li>
-                        <li>Exterior made of 100% cotton</li>
-                        <li>Contains 0% hazardous substances</li>
-                        <li>Embroidery & DTG printing</li>
-                        <li>Country of origin: Pakistan</li>
-                    </ul>
-                
-                <br><strong>Warning: This hoodie fits small. For the perfect fit, we recommend ordering one size larger than your usual size (see our "size guide").</strong> 
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 62,99€</strong></p>
-
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/aEUbIO2i0auT7UAg0s" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/9AQ7sy8Go9qPb6MbKd" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/6oE4gme0I7iHb6M8y2" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/4gw9AGbSA6eDeiYbKf" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/aEUaEK9KsfPd6Qw8y4" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/6oEfZ48Go1Yn5Ms15D" onclick="selectSize(this)">3XL</div>
-                </div>
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit2()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-            } if (productId === 'produit3') {
+        if (productId === 'produit3') {
             modalBody.innerHTML = `
                 <h2>Lavender Glow - Hoodie</h2>
                 <div class="mosaic">
@@ -2110,274 +2018,6 @@
                 <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
                 <p id="errorMessage" class="error-message">Please select a size.</p>
             `;
-            } if (productId === 'produit7 - Lavender') {
-            modalBody.innerHTML = `
-                <h2>Bold & Free - T-Shirt (Lavender)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/ue0Yr4m.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/16SdjUd.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/KQ5QR2P.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/4hyrspI.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/9IJg6Tn.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/SJwsQGZ.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/2N5H5W8.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/W0ApoUi.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/rUl74cC.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/EXMEUVF.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality lavender t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>Straight cut & embroidered logo.</li>
-                            <li>Country of origin: Bangladesh</li>
-                        </ul>
-                
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit7 - Peach')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#ffd2be" style="background-color: #ffd2be;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit7 - White')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fff" style="background-color: #fff;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit7 - Cotton Pink')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f5e8ce" style="background-color: #ffe9eb;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 32,99€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/eVa5kq3m47iHeiY3eW" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/5kA5kq4q88mLeiYaHp" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/4gwcMS5uc46v5Msg1K" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/9AQ6ou7Ck6eD1wc8zj" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/14k5kq2i00Ujgr69Do" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN28wC2i06eD3EkbLx" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit5()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit7 - Peach') {
-            modalBody.innerHTML = `
-                <h2>Bold & Free - T-Shirt (Peach)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/0hCqTxX.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/pnQR0cD.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/ShUN7wD.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/OXcWERD.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/TRhrPBg.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/OXJZeRc.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Gpn3E7d.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/MG3Bjws.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/VUm7HD9.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/k3E2l65.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality peach t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>Straight cut & embroidered logo.</li>
-                            <li>Country of origin: Bangladesh</li>
-                        </ul>
-                
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit7 - Lavender')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f7ecff" style="background-color: #f7ecff;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit7 - White')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fff" style="background-color: #fff;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit7 - Cotton Pink')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f5e8ce" style="background-color: #ffe9eb;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 32,99€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/eVafZ49KscD1b6MbLy" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/4gwfZ409SeL9a2I02R" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/7sIcMS3m4gTh3Ek16W" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/00g28e5ucfPdb6M9Dt" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/7sIbIOf4M9qPb6M02U" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/28o8wC1dW5azfn2g1T" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit5()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit7 - White') {
-            modalBody.innerHTML = `
-                <h2>Bold & Free - T-Shirt (White)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/qq7bQy7.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/SXHHbuh.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/7N3cssX.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/i1uPZyl.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/p5d8f51.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/m6jVExs.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/UjHoN2P.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/3GbKlAi.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/BA6gZnj.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/Msc3FPy.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality white t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>Straight cut & embroidered logo.</li>
-                            <li>Country of origin: Bangladesh</li>
-                        </ul>
-                
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit7 - Lavender')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f7ecff" style="background-color: #f7ecff;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit7 - Peach')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#ffd2be" style="background-color: #ffd2be;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit7 - Cotton Pink')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f5e8ce" style="background-color: #ffe9eb;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 32,99€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/6oE0067Ck5azcaQaHA" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/14keV01dWdH52AgbLF" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/8wM7syaOwgTh2Ag9Dy" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/fZe28e4q89qP1wc2b7" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/9AQ7sybSA46vdeU2b8" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/9AQfZ42i06eDb6MeXV" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit5()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-        } if (productId === 'produit7 - Cotton Pink') {
-            modalBody.innerHTML = `
-                <h2>Bold & Free - T-Shirt (Pink)</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/ua6kDAX.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/drfVtqk.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/6Ayr0ly.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/9X98NvE.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/8yS7oZP.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/TCOqLps.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/JgK6i89.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/N9RBogN.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/HprGBXB.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/8FjpEaI.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>This high-quality pink t-shirt is made from 100% organic cotton. It is perfect for environmentally conscious shoppers. The t-shirt is extremely comfortable.
-                    
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                        <ul>
-                            <li>100% organic cotton 🌿</li>
-                            <li>Contains 0% hazardous substances</li>
-                            <li>Straight cut & embroidered logo.</li>
-                            <li>Country of origin: Bangladesh</li>
-                        </ul>
-                
-                <h4>Would you like to see another color?</h4>
-                <div class="similar-articles">
-                    <div class="similar-articles-container">
-                        <div class="product-card2" onclick="openModal('produit7 - Lavender')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#f7ecff" style="background-color: #f7ecff;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit7 - Peach')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#ffd2be" style="background-color: #ffd2be;"></div>
-                            </div>
-                        </div>
-                        <div class="product-card2" onclick="openModal('produit7 - White')">
-                            <div class="product-info">
-                                <div class="color-option" data-color="#fff" style="background-color: #fff;"></div>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres produits similaires ici -->
-                    </div>
-                </div>
-                
-                <br><br>Select a size to proceed to payment.</p>
-                <p><strong>Price : 32,99€</strong></p>
-                
-                <!-- Taille en stock -->
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/cN2dQW5ucdH57UAeXW" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN228e6yg5az8YE177" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/fZe3cig8QgThgr67vw" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/28o9AG8Go9qP1wc035" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/dR6bIO09SgThfn2eY0" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/bIYdQW4q86eDfn28zD" onclick="selectSize(this)">3XL</div>
-                </div>
-                <!-- Taille en rupture de stock exemple -->
-                <!-- <div class="size-option out-of-stock" onclick="indisponible()">M</div> -->
-                
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit5()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
             }
         
             modal.style.display = "block";
@@ -2649,6 +2289,32 @@ function openProductPageProduct8White() {
     // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
     window.open('elegance-ar00021.html', '_blank');
 }
+
+function openProductPageProduct7Lavender() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('bold-&-free-ar00018.html', '_blank');
+}
+
+function openProductPageProduct7CottonPink() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('bold-&-free-ar00019.html', '_blank');
+}
+
+function openProductPageProduct7Peach() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('bold-&-free-ar00017.html', '_blank');
+}
+
+function openProductPageProduct7White() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('bold-&-free-ar00020.html', '_blank');
+}
+
+function openProductPageProduct2() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('emerald-ar00002.html', '_blank');
+}
+
 </script>
 
 <script>
