@@ -41,6 +41,12 @@ nav {
     text-align: center;
 }
 
+.menu-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .menu {
     display: flex;
     gap: 20px;
@@ -48,6 +54,7 @@ nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .menu li {
@@ -574,14 +581,14 @@ footer {
 
 .main-gallery {
     width: 100%; /* S'adapte à la largeur de son conteneur */
-    height: 54vh; /* 54% de la hauteur de la fenêtre visible */
+    height: 56vh; /* 54% de la hauteur de la fenêtre visible */
     border: none; /* Supprime les bordures */
 }
 
 /* Adaptation pour tablettes */
 @media (max-width: 768px) {
     .main-gallery {
-      height: 220vh; /* Augmente la hauteur pour les écrans plus petits */
+      height: 165vh; /* Augmente la hauteur pour les écrans plus petits */
     }
   }
 

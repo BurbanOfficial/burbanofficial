@@ -3,47 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galerie Responsive Horizontale</title>
+  <title>Burban - Gallery Of Our Latest Articles</title>
+  <!-- Lien vers le fichier CSS -->
+  <link rel="stylesheet" href="styles-gallery.css">
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=bevellier@700,500,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles-gallery.css">
 </head>
 <body>
-<!-- Galerie -->
-  <div class="photo-gallery">
-    <h2 class="gallery-title">Our New Items</h2><br><br>
+  <div class="gallery-container">
+    <h1>Our Latest Articles</h1>
     <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="https://i.imgur.com/3EAiQad.jpeg" alt="Article 2">
-            <div class="item-info">
-                <h3>Morning Sweets - T-Shirt</h3>
-                <p>A high-quality t-shirt made from 100% cotton, making it an extremely comfortable t-shirt.</p>
-            </div>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="https://i.imgur.com/TWNLwlA.jpeg" alt="Article 1">
-            <div class="item-info">
-                <h3>Skate - T-Shirts</h3>
-                <p>Available in 12 colors (6 Dark and 6 Light).<br>It is very comfortable and of exceptional quality.</p>
-            </div>
-        </div>
-        
-        <div class="gallery-item">
-            <img src="https://i.imgur.com/QIM5Xl4.jpeg" alt="Article 3">
-            <div class="item-info">
-                <h3>Starry - Beanie</h3>
-                <p>Optimal comfort & keeps you warm in cold weather</p>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="https://i.imgur.com/3A3fP9Z.jpeg" alt="Article 4">
-            <div class="item-info">
-                <h3>Cartoon - Hoodie</h3>
-                <p>Made 100% from cotton.<Br>Perfect for eco-conscious enthusiasts.</p>
-            </div>
-        </div>
+      <!-- Chaque élément de la galerie correspond à un article -->
+      <div class="gallery-item">
+        <a href="morning-sweets-ar00039.html" target="_blank">
+          <img src="https://i.imgur.com/3EAiQad.jpeg" alt="Article 1">
+          <div class="overlay">Discover the Morning Sweets T-shirt</div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="article2.html" target="_blank">
+          <img src="https://i.imgur.com/3EAiQad.jpeg" alt="Article 2">
+          <div class="overlay">Lire l'article</div>
+        </a>
+      </div>
+      <div class="gallery-item">
+        <a href="article3.html" target="_blank">
+          <img src="https://i.imgur.com/3EAiQad.jpeg" alt="Article 3">
+          <div class="overlay">Lire l'article</div>
+        </a>
+      </div>
+      <!-- Ajoutez d'autres articles ici -->
     </div>
-</div>
+  </div>
+
+<script>
+// Exemple : Ajout d'un effet de log lors du clic sur un article
+    document.querySelectorAll('.gallery-item a').forEach(item => {
+    item.addEventListener('click', () => {
+        console.log("Article ouvert dans un nouvel onglet !");
+    });
+});
+</script>
 </body>
 </html>
