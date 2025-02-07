@@ -546,7 +546,7 @@ footer {
 
 /* Tablettes (paysage) et petits ordinateurs portables (largeur entre 769px et 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .formulaire-connexion-inscription {
+    .contactform {
         width: 100%; /* S'adapte à la largeur de son conteneur */
         height: 100vh; /* 54% de la hauteur de la fenêtre visible */
         border: none; /* Supprime les bordures */
@@ -555,16 +555,16 @@ footer {
 
 /* Petites tablettes et grands téléphones (portrait, largeur entre 481px et 768px) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    .formulaire-connexion-inscription {
+    .contactform {
         width: 100%; /* S'adapte à la largeur de son conteneur */
-        height: 100vh; /* 54% de la hauteur de la fenêtre visible */
+        height: 125vh; /* 54% de la hauteur de la fenêtre visible */
         border: none; /* Supprime les bordures */
     }
 }
 
 /* Ordinateurs standards (largeur entre 1025px et 1440px) */
 @media screen and (min-width: 1025px) and (max-width: 1850px) {
-    .formulaire-connexion-inscription {
+    .contactform {
         width: 100%; /* S'adapte à la largeur de son conteneur */
         height: 100vh; /* 54% de la hauteur de la fenêtre visible */
         border: none; /* Supprime les bordures */
