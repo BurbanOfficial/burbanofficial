@@ -540,7 +540,7 @@ footer {
 
 .contactform {
     width: 100%; /* S'adapte à la largeur de son conteneur */
-    height: 130vh; /* 54% de la hauteur de la fenêtre visible */
+    height: 120vh; /* 54% de la hauteur de la fenêtre visible */
     border: none; /* Supprime les bordures */
 }
 
@@ -548,7 +548,7 @@ footer {
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .contactform {
         width: 100%; /* S'adapte à la largeur de son conteneur */
-        height: 130vh; /* 54% de la hauteur de la fenêtre visible */
+        height: 110vh; /* 54% de la hauteur de la fenêtre visible */
         border: none; /* Supprime les bordures */
     }
 }
