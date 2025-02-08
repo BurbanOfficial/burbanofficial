@@ -423,7 +423,7 @@ footer {
   }
   
   .banner1 {
-    background-image: url('https://i.imgur.com/6IKB0ms.jpeg');
+    background-image: url('https://i.imgur.com/jVyLQYb.png');
     background-size: cover;
     background-position: center;
     height: 900px;
@@ -449,7 +449,7 @@ footer {
 /* Ajustement pour les écrans plus petits */
 @media (max-width: 768px) {
     .banner1 {
-        height: 40vh; /* Ajuste la hauteur à la moitié de la hauteur de l'écran */
+        height: 25vh; /* Ajuste la hauteur à la moitié de la hauteur de l'écran */
     }
 }
 

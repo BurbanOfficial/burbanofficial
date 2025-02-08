@@ -856,23 +856,23 @@
         </div>
     </div>
 
-    <div class="product-card" data-category="sweat" data-color="blanc violet orange" data-price="69.99" onmouseover="showImage(this, 'https://i.imgur.com/lSjlJ0W.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/70YG2tk.jpeg')" onclick="openModal('produit3')">
+    <div class="product-card" data-category="sweat" data-color="blanc violet orange" data-price="69.99" onmouseover="showImage(this, 'https://i.imgur.com/lSjlJ0W.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/70YG2tk.jpeg')" onclick="openProductPageProduct3()">
         <img src="https://i.imgur.com/70YG2tk.jpeg" alt="Produit 3" class="product-image">
         <div class="product-info">
             <h3 class="product-title">Lavender Glow</h3>
             <h6 class="product-categorie">Hoodie</h6>
             <p class="product-price">69,99€</p>
-            <button class="view-product-button" onclick="openModal('produit3'); event.stopPropagation();">Discover</button>
+            <button class="view-product-button" onclick="openProductPageProduct3(); event.stopPropagation();">Discover</button>
         </div>
     </div>
 
-    <div class="product-card" data-category="sweat" data-color="blanc vert rouge" data-price="69.99" onmouseover="showImage(this, 'https://i.imgur.com/9XU1KQK.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/4u6mGvR.jpeg')" onclick="openModal('produit4')">
+    <div class="product-card" data-category="sweat" data-color="blanc vert rouge" data-price="69.99" onmouseover="showImage(this, 'https://i.imgur.com/9XU1KQK.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/4u6mGvR.jpeg')" onclick="openProductPageProduct4()">
         <img src="https://i.imgur.com/4u6mGvR.jpeg" alt="Produit 4" class="product-image">
         <div class="product-info">
             <h3 class="product-title">Harmony</h3>
             <h6 class="product-categorie">Hoodie</h6>
             <p class="product-price">69,99€</p>
-            <button class="view-product-button" onclick="openModal('produit4'); event.stopPropagation();">Discover</button>
+            <button class="view-product-button" onclick="openProductPageProduct4(); event.stopPropagation();">Discover</button>
         </div>
     </div>
 
@@ -985,48 +985,7 @@
     // Faire défiler la page vers le haut
     window.scrollTo(0, 0);
 
-        if (productId === 'produit3') {
-            modalBody.innerHTML = `
-                <h2>Lavender Glow - Hoodie</h2>
-                <div class="mosaic">
-                    <img src="https://i.imgur.com/lSjlJ0W.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/70YG2tk.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/pq5nUgk.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/FHyxLF4.jpeg" alt="Image 2" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/letVpMU.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/s62nNMR.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/UYpZ5KI.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/G4Ez00c.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                    <img src="https://i.imgur.com/OkmDpmc.jpeg" alt="Image 3" onclick="openGalleryModal(this.src)">
-                </div>
-                <p>With its sleek, fitted cut, this hoodie offers a modern look. <br>The 100% cotton exterior makes this hoodie soft to the touch. 
-                    <h4>Composition, Quality & Environmental Characteristics</h4>
-                    <ul>
-                        <li>65% cotton, 35% polyester</li>
-                        <li>Exterior made of 100% cotton</li>
-                        <li>Contains 0% hazardous substances</li>
-                        <li>Embroidery & DTG printing</li>
-                        <li>Country of origin: Pakistan</li>
-                    </ul>
-
-                    <br><strong>Warning: Warning: This hoodie fits small. For the perfect fit, we recommend ordering one size larger than your usual size (see our "size guide").
-                    </strong> <br><br>Select a size to proceed to payment.</p>
-
-                <p><strong>Price : 69,99€</strong></p>
-                <div class="size-selection">
-                    <!-- <div class="size-option out-of-stock" onclick="indisponible()">Currently unavailable</div> -->
-                    <div class="size-option" data-link="https://buy.stripe.com/cN28wCf4MfPd2AgdSq" onclick="selectSize(this)">S</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/28o7syg8QeL9fn25lV" onclick="selectSize(this)">M</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/9AQfZ44q89qP3Ek9Cc" onclick="selectSize(this)">L</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/cN25kq2i0eL91wcdSt" onclick="selectSize(this)">XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/28o8wC09S5az4Io29M" onclick="selectSize(this)">2XL</div>
-                    <div class="size-option" data-link="https://buy.stripe.com/5kA8wCe0IauT0s8g0D" onclick="selectSize(this)">3XL</div>
-                </div>
-                <button id="sizeGuideBtn" class="add-to-cart-button" onclick="openSizeGuideProduit2()">Size guide</button>
-                <button id="addToCartBtn" class="add-to-cart-button" style="display: none;" onclick="addToCart()">Proceed to payment</button>
-                <p id="errorMessage" class="error-message">Please select a size.</p>
-            `;
-            } if (productId === 'produit4') {
+        if (productId === 'produit4') {
             modalBody.innerHTML = `
                 <h2>Harmony - Hoodie</h2>
                 <div class="mosaic">
@@ -2315,6 +2274,15 @@ function openProductPageProduct2() {
     window.open('emerald-ar00002.html', '_blank');
 }
 
+function openProductPageProduct3() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('lavender-glow-ar00003.html', '_blank');
+}
+
+function openProductPageProduct4() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.open('harmony-ar00004.html', '_blank');
+}
 </script>
 
 <script>
