@@ -152,29 +152,52 @@ function loadUserProfile(user) {
 }
 
 // 8. Mise à jour du Profil
-profileForm.addEventListener('submit', (e) => {
+profileForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const user = auth.currentUser;
   if (!user) return;
-  
+
   const newFirstname = document.getElementById('profile-firstname').value.trim();
   const newLastname  = document.getElementById('profile-lastname').value.trim();
   const newEmail     = document.getElementById('profile-email').value.trim();
 
-  db.collection('users').doc(user.uid).update({
-    firstname: newFirstname,
-    lastname: newLastname,
-    email: newEmail
-  })
-  .then(() => {
-    showNotification("Profile updated", "Your profile has been successfully updated.");
+  try {
+    // Mettre à jour le prénom et le nom immédiatement
+    await db.collection('users').doc(user.uid).update({
+      firstname: newFirstname,
+      lastname: newLastname,
+      email: newEmail
+    });
+
+    // Vérifier si l'email a changé
+    if (newEmail !== user.email) {
+      // Envoyer un email de confirmation
+      await user.verifyBeforeUpdateEmail(newEmail);
+      showNotification("Verification Email Sent", "Please check your new email and confirm the change.");
+
+      // Écouter les changements d'authentification pour mettre à jour Firestore après vérification
+      const unsubscribe = auth.onAuthStateChanged(async (updatedUser) => {
+        if (updatedUser && updatedUser.email === newEmail) {
+          await db.collection('users').doc(updatedUser.uid).update({
+            email: newEmail
+          });
+          showNotification("Profile updated", "Your email has been updated in the database.");
+          unsubscribe(); // Arrêter l'écoute une fois la mise à jour terminée
+        }
+      });
+    } else {
+      showNotification("Profile updated", "Your profile has been successfully updated.");
+    }
+
+    // Mise à jour de l'affichage
     userFirstnameDisplay.textContent = newFirstname;
-  })
-  .catch(err => {
+  } 
+  catch (err) {
     console.error(err);
     showNotification("Erreur", err.message, 6000);
-  });
+  }
 });
+
 
 // 9. Mise à jour du mot de passe
 passwordForm.addEventListener('submit', (e) => {
