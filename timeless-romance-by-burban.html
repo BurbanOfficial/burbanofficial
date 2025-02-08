@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Collection d'Articles</title>
+  <!-- Importation de quelques polices pour un rendu élégant -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Réglages généraux */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f8f8f8;
+      color: #333;
+      line-height: 1.6;
+    }
+    /* Container de la collection */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    /* Style des cards */
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .card-content {
+      padding: 1.5rem;
+    }
+    .card-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin: 0 0 1rem;
+      color: #222;
+    }
+    .card-content p {
+      font-size: 1rem;
+      margin: 0 0 1.5rem;
+    }
+    /* Lien "Lire plus" avec la flèche */
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      font-weight: 700;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    .read-more .arrow {
+      margin-left: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    .read-more:hover {
+      color: #007BFF;
+    }
+    .read-more:hover .arrow {
+      transform: translateX(5px);
+    }
+    /* Adaptation pour mobile */
+    @media (max-width: 600px) {
+      .card-content {
+        padding: 1rem;
+      }
+      .card-content h2 {
+        font-size: 1.25rem;
+      }
+      .card-content p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Exemple d'article 1 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" alt="Image de l'article 1">
+      <div class="card-content">
+        <h2>Titre de l'article 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+        <a href="#" class="read-more">Lire plus <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+    <!-- Exemple d'article 2 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" alt="Image de l'article 2">
+      <div class="card-content">
+        <h2>Titre de l'article 2</h2>
+        <p>Curabitur ac leo nunc. Vestibulum et mauris vel ante finibus maximus nec ut leo.</p>
+        <a href="#" class="read-more">Lire plus <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+    <!-- Exemple d'article 3 -->
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" alt="Image de l'article 3">
+      <div class="card-content">
+        <h2>Titre de l'article 3</h2>
+        <p>Maecenas quis velit non ante scelerisque malesuada. Integer vitae sem sed urna vestibulum.</p>
+        <a href="#" class="read-more">Lire plus <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
