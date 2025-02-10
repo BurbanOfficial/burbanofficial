@@ -66,7 +66,7 @@ registerForm.addEventListener('submit', (e) => {
         birthday: birthday || "",
         newsletter,
         favorites: [],  // Création du tableau favoris vide
-        points: 0       // Initialisation des points de fidélité à 0
+        points: 200       // Initialisation des points de fidélité à 0
       });
     })
     .then(() => {

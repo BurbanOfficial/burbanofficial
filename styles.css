@@ -435,15 +435,44 @@ footer {
 }
 
 .banner2 {
-    background-image: url('https://i.imgur.com/ge72qZs.jpeg'); /* Remplacer par votre image */
+    background-image: url('https://i.imgur.com/GF1Fu2D.jpeg'); /* Remplacer par votre image */
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 880px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+}
+
+/* Style du bouton */
+.cta-button {
+    position: absolute;
+    bottom: -105vh; /* Décale le bouton de 20px depuis le bas */
+    right: 95px; /* Décale le bouton de 20px depuis la droite */
+    padding: 10px 20px;
+    background-color: #683C74; /* Couleur d'arrière-plan du bouton */
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Effet au survol */
+  .cta-button:hover {
+    background-color: #935da1; /* Changer la couleur au survol */
+    border-radius: 5px;
+  }
+
+/* Ajustement pour les écrans plus petits */
+@media (min-width: 900px) and (max-width: 1024px) {
+    .cta-button {
+        bottom: -130vh; /* Décale le bouton de 20px depuis le bas */
+        right: 95px; /* Décale le bouton de 20px depuis la droite */
+    }
 }
 
 /* Ajustement pour les écrans plus petits */
@@ -456,7 +485,7 @@ footer {
 /* Ajustement pour les écrans plus petits */
 @media (max-width: 768px) {
     .banner2 {
-        height: 40vh; /* Ajuste la hauteur à la moitié de la hauteur de l'écran */
+        display: none;
     }
 }
 

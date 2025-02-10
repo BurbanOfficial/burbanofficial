@@ -719,6 +719,29 @@
 <!-- Affichage de tous les articles dans la page de découverte des articles dans la boutique -->
 <div class="shop-container">
     <div class="shop-container">
+        <div class="product-card" data-category="t-shirt" data-color="blanc bleuciel bleu noir rouge" data-price="83.5" onmouseover="showImage(this, 'https://i.imgur.com/QGIzJw8.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/aTSbQft.jpeg')" onclick="openProductPageProduct16BleuFoncé()">
+            <!-- Étiquette respectueuse de l'environnement -->
+        <div class="eco-label">
+            <span class="eco-icon">🌱</span>
+        <!-- Bulle d'information (cachée par défaut) -->
+        <div class="eco-tooltip">
+            This product is environmentally friendly.
+        </div>
+        </div>
+            <img src="https://i.imgur.com/aTSbQft.jpeg" alt="Produit 15" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Mad In Love</h3>
+                <h6 class="product-categorie">Hoodie</h6>
+                <!-- Cercle de couleur personnalisé -->
+                <div class="color-circles">
+                    <div class="color-circle" style="background-color: #0b0b0b;"></div>
+                    <div class="color-circle" style="background-color: #132e57;"></div>
+                </div>
+                <p class="product-price">83,50€</p>
+                <button class="view-product-button" onclick="openProductPageProduct16BleuFoncé(); event.stopPropagation();">Discover</button>
+            </div>
+        </div>
+
         <div class="product-card" data-category="t-shirt" data-color="blanc vert violet rose" data-price="33.99" onmouseover="showImage(this, 'https://i.imgur.com/7sIbmpM.jpeg')" onmouseout="showImage(this, 'https://i.imgur.com/3EAiQad.jpeg')" onclick="openProductPageProduct15()">
             <!-- Étiquette respectueuse de l'environnement -->
         <div class="eco-label">
@@ -1333,6 +1356,16 @@ function openProductPageProduct5Anthracite() {
 function openProductPageProduct6Noir() {
     // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
     window.location.href = 'bunny-chic-ar00015.html';
+}
+
+function openProductPageProduct16BleuFoncé() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.location.href = 'mad-in-love-ar00040.html';
+}
+
+function openProductPageProduct16Noir() {
+    // Ouvrir l'index.html dans le dossier Articles/Modèle dans un nouvel onglet
+    window.location.href = 'mad-in-love-ar00041.html';
 }
 </script>
 

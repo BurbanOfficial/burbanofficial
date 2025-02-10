@@ -7,9 +7,9 @@
 
 /* Style général du body */
 body {
-  font-family: 'bevellier', sans-serif;
+  font-family: 'satoshi', sans-serif;
   background-color: #fff;
-  color: #333;
+  color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
