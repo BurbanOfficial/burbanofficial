@@ -434,6 +434,14 @@ footer {
     text-align: center;
 }
 
+/* Ajustement pour les écrans plus petits */
+@media (max-width: 768px) {
+    .banner1 {
+        height: 25vh; /* Ajuste la hauteur à la moitié de la hauteur de l'écran */
+    }
+}
+
+/*------------------------------- Banner 2 ajustments -------------------------------*/
 .banner2 {
     background-image: url('https://i.imgur.com/GF1Fu2D.jpeg'); /* Remplacer par votre image */
     background-size: cover;
@@ -446,6 +454,79 @@ footer {
     text-align: center;
 }
 
+/* Ajustement pour les écrans plus petits */
+@media screen and (min-width: 481px) and (max-width: 650px) {
+    .banner2 {
+        height: 30vh; /* Hauteur maximale */
+        max-width: 800px;
+        margin: 0 auto; /* Centre horizontalement */
+        display: flex; /* Active le modèle de mise en page flex */
+        justify-content: center; /* Centre le contenu horizontalement */
+        align-items: center; /* Centre le contenu verticalement */
+    }
+}
+
+/* Petites tablettes et grands téléphones (portrait, largeur entre 481px et 768px) */
+@media screen and (min-width: 651px) and (max-width: 768px) {
+    .banner2 {
+        height: 40vh; /* Hauteur maximale */
+        max-width: 768px;
+        margin: 0 auto; /* Centre horizontalement */
+        display: flex; /* Active le modèle de mise en page flex */
+        justify-content: center; /* Centre le contenu horizontalement */
+        align-items: center; /* Centre le contenu verticalement */
+    }
+}
+
+/* Tablettes (paysage) et petits ordinateurs portables (largeur entre 769px et 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .banner2 {
+        height: 50vh; /* Hauteur maximale */
+        max-width: 1024px;
+        margin: 0 auto; /* Centre horizontalement */
+        display: flex; /* Active le modèle de mise en page flex */
+        justify-content: center; /* Centre le contenu horizontalement */
+        align-items: center; /* Centre le contenu verticalement */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1290px) {
+    .banner2 {
+        height: 60vh; /* Hauteur maximale */
+        max-width: 1290px;
+        margin: 0 auto; /* Centre horizontalement */
+        display: flex; /* Active le modèle de mise en page flex */
+        justify-content: center; /* Centre le contenu horizontalement */
+        align-items: center; /* Centre le contenu verticalement */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1291px) and (max-width: 1500px) {
+    .banner2 {
+        height: 75vh; /* Hauteur maximale */
+        max-width: 1500px;
+        margin: 0 auto; /* Centre horizontalement */
+        display: flex; /* Active le modèle de mise en page flex */
+        justify-content: center; /* Centre le contenu horizontalement */
+        align-items: center; /* Centre le contenu verticalement */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1441px et 1850px) */
+@media screen and (min-width: 1501px) and (max-width: 1850px) {
+    .banner2 {
+        height: 90vh; /* Hauteur maximale */
+        max-width: 1850px;
+        margin: 0 auto; /* Centre horizontalement */
+        display: flex; /* Active le modèle de mise en page flex */
+        justify-content: center; /* Centre le contenu horizontalement */
+        align-items: center; /* Centre le contenu verticalement */
+    }
+}
+
+/* ---------- Adaptation du bouton ---------- */
 /* Style du bouton */
 .cta-button {
     position: absolute;
@@ -460,71 +541,62 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
-  /* Effet au survol */
-  .cta-button:hover {
+
+/* Effet au survol */
+.cta-button:hover {
     background-color: #935da1; /* Changer la couleur au survol */
     border-radius: 5px;
   }
 
 /* Ajustement pour les écrans plus petits */
-@media (min-width: 900px) and (max-width: 1024px) {
+@media screen and (min-width: 481px) and (max-width: 650px) {
+    .cta-button {
+        bottom: 25vh; /* Décale le bouton de 20px depuis le bas */
+        right: 30px; /* Décale le bouton de 20px depuis la droite */
+        font-size: 11px;
+    }
+}
+
+/* Petites tablettes et grands téléphones (portrait, largeur entre 481px et 768px) */
+@media screen and (min-width: 651px) and (max-width: 768px) {
     .cta-button {
         bottom: -130vh; /* Décale le bouton de 20px depuis le bas */
         right: 95px; /* Décale le bouton de 20px depuis la droite */
     }
 }
 
-/* Ajustement pour les écrans plus petits */
-@media (max-width: 768px) {
-    .banner1 {
-        height: 25vh; /* Ajuste la hauteur à la moitié de la hauteur de l'écran */
-    }
-}
-
-/*------------------------------- Banner 2 ajustments -------------------------------*/
-
-/* Ajustement pour les écrans plus petits */
-@media (max-width: 768px) {
-    .banner2 {
-        display: none;
-    }
-}
-
 /* Tablettes (paysage) et petits ordinateurs portables (largeur entre 769px et 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .banner2 {
-        height: 50vh; /* 54% de la hauteur de la fenêtre visible */
-    }
-}
-
-/* Petites tablettes et grands téléphones (portrait, largeur entre 481px et 768px) */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    .banner2 {
-        height: 140vh; /* 54% de la hauteur de la fenêtre visible */
+    .cta-button {
+        bottom: -130vh; /* Décale le bouton de 20px depuis le bas */
+        right: 95px; /* Décale le bouton de 20px depuis la droite */
     }
 }
 
 /* Ordinateurs standards (largeur entre 1025px et 1440px) */
-@media screen and (min-width: 1025px) and (max-width: 1390px) {
-    .banner2 {
-        height: 63vh; /* 54% de la hauteur de la fenêtre visible */
+@media screen and (min-width: 1025px) and (max-width: 1290px) {
+    .cta-button {
+        bottom: -130vh; /* Décale le bouton de 20px depuis le bas */
+        right: 95px; /* Décale le bouton de 20px depuis la droite */
     }
 }
 
 /* Ordinateurs standards (largeur entre 1025px et 1440px) */
-@media screen and (min-width: 1391px) and (max-width: 1440px) {
-    .banner2 {
-        height: 70vh; /* 54% de la hauteur de la fenêtre visible */
+@media screen and (min-width: 1291px) and (max-width: 1500px) {
+    .cta-button {
+        bottom: -130vh; /* Décale le bouton de 20px depuis le bas */
+        right: 95px; /* Décale le bouton de 20px depuis la droite */
     }
 }
 
 /* Ordinateurs standards (largeur entre 1441px et 1850px) */
-@media screen and (min-width: 1441px) and (max-width: 1850px) {
+@media screen and (min-width: 1501px) and (max-width: 1850px) {
     .banner2 {
-        height: 90vh; /* 54% de la hauteur de la fenêtre visible */
+        bottom: -130vh; /* Décale le bouton de 20px depuis le bas */
+        right: 95px; /* Décale le bouton de 20px depuis la droite */
     }
 }
+
 
 /* ------------------------------------------------ Language Selector & Sign Up button------------------------------------------------*/
 /* Header Actions */
