@@ -455,21 +455,9 @@ footer {
 }
 
 /* Ajustement pour les écrans plus petits */
-@media screen and (min-width: 481px) and (max-width: 650px) {
+@media (max-width: 768px) {
     .banner2 {
         display: none;
-    }
-}
-
-/* Petites tablettes et grands téléphones (portrait, largeur entre 481px et 768px) */
-@media screen and (min-width: 651px) and (max-width: 768px) {
-    .banner2 {
-        height: 40vh; /* Hauteur maximale */
-        max-width: 768px;
-        margin: 0 auto; /* Centre horizontalement */
-        display: flex; /* Active le modèle de mise en page flex */
-        justify-content: center; /* Centre le contenu horizontalement */
-        align-items: center; /* Centre le contenu verticalement */
     }
 }
 
