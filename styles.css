@@ -482,10 +482,47 @@ footer {
     }
 }
 
+/*------------------------------- Banner 2 ajustments -------------------------------*/
+
 /* Ajustement pour les écrans plus petits */
 @media (max-width: 768px) {
     .banner2 {
         display: none;
+    }
+}
+
+/* Tablettes (paysage) et petits ordinateurs portables (largeur entre 769px et 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .banner2 {
+        height: 50vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+/* Petites tablettes et grands téléphones (portrait, largeur entre 481px et 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .banner2 {
+        height: 140vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1390px) {
+    .banner2 {
+        height: 63vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1391px) and (max-width: 1440px) {
+    .banner2 {
+        height: 70vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1441px et 1850px) */
+@media screen and (min-width: 1441px) and (max-width: 1850px) {
+    .banner2 {
+        height: 90vh; /* 54% de la hauteur de la fenêtre visible */
     }
 }
 
