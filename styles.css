@@ -323,7 +323,7 @@ footer {
 
 @media (max-width: 768px) {
     .online-shop {
-        height: 1010vh;
+        height: 1030vh;
     }
 }
 
@@ -616,7 +616,7 @@ footer {
 
 @media (max-width: 520px) {
     .main-gallery {
-        height: 150vh; /* 54% de la hauteur de la fenêtre visible */
+        height: 160vh; /* 54% de la hauteur de la fenêtre visible */
     }
 }
 
