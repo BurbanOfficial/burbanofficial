@@ -416,98 +416,6 @@ footer {
         font-size: 12px; /* Réduction supplémentaire pour les écrans très petits */
     }
 }
-  
-  /* ------------------------------------------------ Bannières de la page d'accueil ------------------------------------------------*/
-  .space-between {
-    height: 20px;
-  }
-  
-  .banner1 {
-    background-image: url('https://i.imgur.com/jVyLQYb.png');
-    background-size: cover;
-    background-position: center;
-    height: 900px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
-
-/* Ajustement pour les écrans plus petits */
-@media (max-width: 768px) {
-    .banner1 {
-        height: 25vh; /* Ajuste la hauteur à la moitié de la hauteur de l'écran */
-    }
-}
-
-/*------------------------------- Banner 2 ajustments -------------------------------*/
-.banner2 {
-    background-image: url('https://i.imgur.com/GF1Fu2D.jpeg'); /* Remplacer par votre image */
-    background-size: cover;
-    background-position: center;
-    height: 880px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
-
-/* Ajustement pour les écrans plus petits */
-@media (max-width: 768px) {
-    .banner2 {
-        display: none;
-    }
-}
-
-/* Tablettes (paysage) et petits ordinateurs portables (largeur entre 769px et 1024px) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .banner2 {
-        height: 50vh; /* Hauteur maximale */
-        max-width: 1024px;
-        margin: 0 auto; /* Centre horizontalement */
-        display: flex; /* Active le modèle de mise en page flex */
-        justify-content: center; /* Centre le contenu horizontalement */
-        align-items: center; /* Centre le contenu verticalement */
-    }
-}
-
-/* Ordinateurs standards (largeur entre 1025px et 1440px) */
-@media screen and (min-width: 1025px) and (max-width: 1290px) {
-    .banner2 {
-        height: 60vh; /* Hauteur maximale */
-        max-width: 1290px;
-        margin: 0 auto; /* Centre horizontalement */
-        display: flex; /* Active le modèle de mise en page flex */
-        justify-content: center; /* Centre le contenu horizontalement */
-        align-items: center; /* Centre le contenu verticalement */
-    }
-}
-
-/* Ordinateurs standards (largeur entre 1025px et 1440px) */
-@media screen and (min-width: 1291px) and (max-width: 1500px) {
-    .banner2 {
-        height: 75vh; /* Hauteur maximale */
-        max-width: 1500px;
-        margin: 0 auto; /* Centre horizontalement */
-        display: flex; /* Active le modèle de mise en page flex */
-        justify-content: center; /* Centre le contenu horizontalement */
-        align-items: center; /* Centre le contenu verticalement */
-    }
-}
-
-/* Ordinateurs standards (largeur entre 1441px et 1850px) */
-@media screen and (min-width: 1501px) and (max-width: 1850px) {
-    .banner2 {
-        height: 90vh; /* Hauteur maximale */
-        max-width: 1850px;
-        margin: 0 auto; /* Centre horizontalement */
-        display: flex; /* Active le modèle de mise en page flex */
-        justify-content: center; /* Centre le contenu horizontalement */
-        align-items: center; /* Centre le contenu verticalement */
-    }
-}
 
 /* ---------- Adaptation du bouton ---------- */
 /* Style du bouton */
@@ -706,12 +614,106 @@ footer {
     border: none; /* Supprime les bordures */
 }
 
-/* Adaptation pour tablettes */
-@media (max-width: 768px) {
+@media (max-width: 520px) {
     .main-gallery {
-      height: 165vh; /* Augmente la hauteur pour les écrans plus petits */
+        height: 200vh; /* 54% de la hauteur de la fenêtre visible */
     }
-  }
+}
+
+@media screen and (min-width: 521px) and (max-width: 540px) {
+    .main-gallery {
+        height: 200vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 600px) {
+    .main-gallery {
+        height: 190vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 720px) {
+    .main-gallery {
+        height: 205vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 721px) and (max-width: 740px) {
+    .main-gallery {
+        height: 215vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 741px) and (max-width: 760px) {
+    .main-gallery {
+        height: 218vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 761px) and (max-width: 800px) {
+    .main-gallery {
+        height: 90vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 850px) {
+    .main-gallery {
+        height: 100vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 851px) and (max-width: 910px) {
+    .main-gallery {
+        height: 103vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 911px) and (max-width: 970px) {
+    .main-gallery {
+        height: 110vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 971px) and (max-width: 1024px) {
+    .main-gallery {
+        height: 115vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .main-gallery {
+        height: 95vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1201px) and (max-width: 1290px) {
+    .main-gallery {
+        height: 50vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1291px) and (max-width: 1340px) {
+    .main-gallery {
+        height: 60vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1341px) and (max-width: 1500px) {
+    .main-gallery {
+        height: 59vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1441px et 1850px) */
+@media screen and (min-width: 1501px) and (max-width: 1600px) {
+    .main-gallery {
+        height: 57vh; /* Hauteur maximale */
+    }
+}
 
 .gallery-title {
     font-size: 2rem;
@@ -801,5 +803,137 @@ footer {
 @media screen and (min-width: 1025px) and (max-width: 1850px) {
     .collections {
         height: 90vh;
+    }
+}
+
+/* ------------------------------------------------ Section Bannières ------------------------------------------------*/
+
+.main-banners {
+    width: 100%; /* S'adapte à la largeur de son conteneur */
+    height: 215vh; /* 54% de la hauteur de la fenêtre visible */
+    border: none; /* Supprime les bordures */
+}
+
+/* Ajustement pour les écrans plus petits */
+
+@media (max-width: 520px) {
+    .main-banners {
+        height: 58vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 521px) and (max-width: 540px) {
+    .main-banners {
+        height: 60vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 541px) and (max-width: 600px) {
+    .main-banners {
+        height: 70vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 720px) {
+    .main-banners {
+        height: 80vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 721px) and (max-width: 740px) {
+    .main-banners {
+        height: 82vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 741px) and (max-width: 760px) {
+    .main-banners {
+        height: 85vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 761px) and (max-width: 800px) {
+    .main-banners {
+        height: 90vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 850px) {
+    .main-banners {
+        height: 95vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 851px) and (max-width: 910px) {
+    .main-banners {
+        height: 103vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 911px) and (max-width: 970px) {
+    .main-banners {
+        height: 110vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+@media screen and (min-width: 971px) and (max-width: 1024px) {
+    .main-banners {
+        height: 115vh; /* 54% de la hauteur de la fenêtre visible */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .main-banners {
+        height: 135vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1201px) and (max-width: 1290px) {
+    .main-banners {
+        height: 145vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1291px) and (max-width: 1340px) {
+    .main-banners {
+        height: 150vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1025px et 1440px) */
+@media screen and (min-width: 1341px) and (max-width: 1500px) {
+    .main-banners {
+        height: 165vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1441px et 1850px) */
+@media screen and (min-width: 1501px) and (max-width: 1600px) {
+    .main-banners {
+        height: 185vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1441px et 1850px) */
+@media screen and (min-width: 1601px) and (max-width: 1700px) {
+    .main-banners {
+        height: 190vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1441px et 1850px) */
+@media screen and (min-width: 1701px) and (max-width: 1780px) {
+    .main-banners {
+        height: 198vh; /* Hauteur maximale */
+    }
+}
+
+/* Ordinateurs standards (largeur entre 1441px et 1850px) */
+@media screen and (min-width: 1781px) and (max-width: 1850px) {
+    .main-banners {
+        height: 205vh; /* Hauteur maximale */
     }
 }
