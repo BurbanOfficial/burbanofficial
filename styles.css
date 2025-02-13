@@ -323,21 +323,21 @@ footer {
 
 @media (max-width: 768px) {
     .online-shop {
-        height: 1000vh;
+        height: 1010vh;
     }
 }
 
 /* Tablettes (paysage) et petits ordinateurs portables (largeur entre 769px et 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .online-shop {
-        height: 950vh;
+        height: 960vh;
     }
 }
 
 /* Ordinateurs standards (largeur entre 1025px et 1440px) */
 @media screen and (min-width: 1025px) and (max-width: 1850px) {
     .online-shop {
-        height: 300vh;
+        height: 310vh;
     }
 }
 /* ------------------------------------------------ Header déroulant ------------------------------------------------*/
@@ -616,7 +616,7 @@ footer {
 
 @media (max-width: 520px) {
     .main-gallery {
-        height: 200vh; /* 54% de la hauteur de la fenêtre visible */
+        height: 150vh; /* 54% de la hauteur de la fenêtre visible */
     }
 }
 
